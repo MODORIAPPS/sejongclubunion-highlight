@@ -27,7 +27,7 @@ const Home: React.FC = () => {
 const Video: React.FC = () => {
   return (
     <div className="relative h-screen">
-      <video className='absolute w-full h-screen' src="/intro.mp4" loop autoPlay muted controls={false} playsInline/>
+      <video style={{objectFit: "cover"}} className='absolute w-screen h-screen' src="/intro.mp4" loop autoPlay muted controls={false} playsInline/>
       <div className="absolute z-4 w-full h-screen bg-gradient-to-t from-black to-[#ffffff00] opacity-90" />
       <div className="absolute z-10 bottom-20 w-full">
         <div>
