@@ -13,8 +13,9 @@ const Home: React.FC = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
+      <div className='relative max-w-3xl mx-auto'>
         <TopBar />
+        <Video />
         <DepartmentStatus />
         <MapView />
         <Footer />
@@ -23,10 +24,36 @@ const Home: React.FC = () => {
   )
 };
 
+const Video: React.FC = () => {
+  return (
+    <div className="relative h-screen">
+      <video className='absolute w-full h-screen' src="/intro.mp4" loop autoPlay muted />
+      <div className="absolute z-4 w-full h-screen bg-gradient-to-t from-black to-[#ffffff00] opacity-90" />
+      <div className="absolute z-10 bottom-20 w-full">
+        <div>
+          <p className='text-center mb-2 text-white font-bold text-3xl'>
+            내게 맞는<br />
+            <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>동아리</span> 찾아보기
+          </p>
+          <p className="text-center text-white mb-5">
+            40개가 넘는 중앙동아리가 <br />
+            여러분을 기다리고 있어요!
+          </p>
+          <div className='flex flex-row justify-center'>
+            <div className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl">
+              <span className='font-bold text-white'>✈️ 지금 찾아보기</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const DepartmentStatus = () => {
   return (
     <div>
-      <h2 className="text-gray-700 font-bold text-3xl px-5">
+      <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
         📚 <br />
         분과별 동아리 현황
       </h2>

@@ -17,8 +17,8 @@ const DepartmentArrow: React.FC<Props> = (
     }
 ) => {
     return (
-        <Link href={href} className="py-4 px-5 flex flex-row justify-between items-center">
-            <div className="flex flex-row">
+        <Link href={href} className="py-4 px-5 flex flex-row justify-between items-center hover:bg-slate-100 rounded-lg cursor-pointer">
+            <div className="container mx-auto flex flex-row">
                 <p className="text-3xl mr-4">{icon}</p>
                 <div className="flex flex-col">
                     <h3 className="text-lg font-bold mb-2 text-gray-700">{title}</h3>
