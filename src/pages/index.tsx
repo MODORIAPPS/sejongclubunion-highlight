@@ -1,11 +1,10 @@
+import DepartmentArrow from '@/components/DepartmentArrow';
+import Footer from '@/components/Footer';
+import TopBar from '@/components/TopBar';
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { useState } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+const Home: React.FC = () => {
   return (
     <>
       <Head>
@@ -14,110 +13,102 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      <div>
+        <TopBar />
+        <DepartmentStatus />
+        <MapView />
+        <Footer />
+      </div>
     </>
   )
-}
+};
+
+const DepartmentStatus = () => {
+  return (
+    <div>
+      <h2 className="text-gray-700 font-bold text-3xl px-5">
+        📚 <br />
+        분과별 동아리 현황
+      </h2>
+      <p className="text-gray-500 my-4 px-5">
+        총 6개의 분과가 있어요.<br />
+        (공연, 문화, 봉사, 종교, 체육, 학술)
+      </p>
+      <DepartmentArrow
+        icon={'🎻'}
+        title={'공연분과'}
+        description={'락밴드, 컴퓨터음악, 통기타, 연극, 인형극 등 공연활동을 하는 동아리입니다.'}
+        href={'clubs/show'} />
+      <DepartmentArrow
+        icon={'💃'}
+        title={'문화분과'}
+        description={'다양한 문화 체험, 독서 모임, 문화 예술 전시 등을 하는 동아리입니다.'}
+        href={'clubs/show'} />
+      <DepartmentArrow
+        icon={'🤝'}
+        title={'봉사분과'}
+        description={'다사회 나눔 활동, 지역 사회 봉사, 해외 봉사 등을 하는 동아리입니다.'}
+        href={'clubs/show'} />
+      <DepartmentArrow
+        icon={'🙏🏻'}
+        title={'종교분과'}
+        description={'다양한 종교 체험, 신앙 생활, 예배 등을 하는 동아리입니다.'}
+        href={'clubs/show'} />
+      <DepartmentArrow
+        icon={'💪'}
+        title={'체육분과'}
+        description={'다양한 운동 활동, 스포츠 대회 참여 등을 하는 동아리입니다.'}
+        href={'clubs/show'} />
+      <DepartmentArrow
+        icon={'🔬'}
+        title={'학술분과'}
+        description={'학문적 연구, 세미나·강연, 학술 대회 등을 하는 동아리입니다.'}
+        href={'clubs/show'} />
+    </div>
+  );
+};
+
+type MapType = "지하 2층" | "5층" | "6층"
+const MapView: React.FC = () => {
+
+  const [location, setLocation] = useState<MapType>("지하 2층");
+
+  const getImage = (): string => {
+    switch (location) {
+      case "지하 2층": return "/images/b2_floor.png";
+      case "5층": return "/images/5_floor.png";
+      case "6층": return "/images/6_floor.png";
+      default: return "/images/b2_floor.png";
+    }
+  };
+
+  const Button: React.FC<{ map: MapType }> = ({ map }) => {
+    return (
+      <div style={{ background: location === map ? "#F1CB23" : "#E1E1E1" }} onClick={() => setLocation(map)} className='ml-3 py-[2px] px-2 rounded'>
+        <span className='text-xs text-gray-700'>{map}</span>
+      </div>
+    );
+  };
+
+  return (
+    <div className='p-5 my-4 rounded-lg bg-[#F8F8F8]'>
+      <h2 className="text-gray-700 font-bold text-2xl">
+        🗺️ <br />
+        동아리실 배치도
+      </h2>
+      <p className="text-gray-500 my-4">
+        중앙동아리는 모두 학생회관에 있어요
+      </p>
+      <img
+        className='w-full h-[150px]'
+        src={getImage()} />
+      <div className='mt-4 flex flex-row-reverse '>
+        <Button map={"6층"} />
+        <Button map={"5층"} />
+        <Button map={"지하 2층"} />
+      </div>
+    </div>
+  );
+};
+
+export default Home;
