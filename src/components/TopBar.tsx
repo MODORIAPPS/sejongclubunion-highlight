@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 // 11050
@@ -63,10 +64,10 @@ const TopBar: React.FC = () => {
     return (
         <>
             <div className="fixed z-20 w-full p-5 bg-white flex flex-row justify-between items-center border-b-[1px] border-bg-gray-400">
-                <div>
+                <Link href="/">
                     <img width={24} height={24} className="mr-2 inline-block" src={"/light_logo.png"} />
                     <span className="text-[color:var(--color-primary)]">하이라이트</span>
-                </div>
+                </Link>
                 <svg
                     onClick={toggleDialogOpen}
                     width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
