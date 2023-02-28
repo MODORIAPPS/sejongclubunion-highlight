@@ -70,3 +70,7 @@
 :root {
   --color-primary: #F1CB23;
 }
+
+dialog::backdrop {
+  background-color: #F1CB23;
+}
