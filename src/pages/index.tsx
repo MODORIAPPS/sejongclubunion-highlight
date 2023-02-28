@@ -56,7 +56,7 @@ const DepartmentStatus = () => {
         분과별 동아리 현황
       </h2>
       <p className="text-gray-500 my-4 px-5">
-        총 6개의 분과가 있어요.<br />
+        세종대학교 중앙동아리는 총 6개의 분과로 나뉘어요.<br />
         (공연, 문화, 봉사, 종교, 체육, 학술)
       </p>
       <DepartmentArrow
@@ -66,12 +66,12 @@ const DepartmentStatus = () => {
         href={'clubs/show'} />
       <DepartmentArrow
         icon={'💃'}
-        title={'문화분과 (6개)'}
+        title={'문화분과 (7개)'}
         description={'다양한 문화 체험, 독서 모임, 문화 예술 전시 등을 하는 동아리입니다.'}
         href={'clubs/culture'} />
       <DepartmentArrow
         icon={'🤝'}
-        title={'봉사분과 (6개)'}
+        title={'봉사분과 (2개)'}
         description={'다사회 나눔 활동, 지역 사회 봉사, 해외 봉사 등을 하는 동아리입니다.'}
         href={'clubs/volunteer'} />
       <DepartmentArrow
@@ -81,12 +81,12 @@ const DepartmentStatus = () => {
         href={'clubs/religion'} />
       <DepartmentArrow
         icon={'💪'}
-        title={'체육분과 (6개)'}
+        title={'체육분과 (14개)'}
         description={'다양한 운동 활동, 스포츠 대회 참여 등을 하는 동아리입니다.'}
         href={'clubs/physical'} />
       <DepartmentArrow
         icon={'🔬'}
-        title={'학술분과 (6개)'}
+        title={'학술분과 (9개)'}
         description={'학문적 연구, 세미나·강연, 학술 대회 등을 하는 동아리입니다.'}
         href={'clubs/academic'} />
     </div>
