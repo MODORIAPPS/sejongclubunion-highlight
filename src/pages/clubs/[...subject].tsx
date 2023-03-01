@@ -36,8 +36,9 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
                 <meta property="og:title" content={`총동아리연합회 - ${getSubjectName()}분과`} />
                 <meta property="og:description" content={`${getSubjectName()}분과 목록을 소개합니다.`} />
             </Head>
-            <div className="pt-16">
+            <div className="max-w-3xl mx-auto pt-16">
                 <SubjectTitle subject={subject} />
+                <RecruitBanner subject={subject} />
                 <div className="my-8">
                     {
                         loading ?
@@ -69,7 +70,9 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
                                                 key={title}
                                                 logo={logo}
                                                 title={title}
-                                                shortDesc={shortDesc.substr(0, 50) + "..."} />
+                                                shortDesc={shortDesc}
+                                                subject={subject}
+                                            />
                                         );
                                     })
                                 }
@@ -80,6 +83,74 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
         </>
     );
 };
+interface SubjectObject {
+    /** Instagram PageId */
+    pageId: string;
+
+    text: string;
+}
+const RecruitBanner: React.FC<{ subject: SubjectType }> = ({ subject }) => {
+
+    const handleClickBanner = () => {
+        window.open(`https://www.instagram.com/p/${getSubjectObject(subject).pageId}`);
+    };
+
+    return (
+        <div onClick={handleClickBanner} className="flex items-center justify-between px-4 py-4 bg-[#ffdf53] rounded-2xl">
+            <div className="flex flex-col">
+                <p className="font-bold text-gray-700">{getSubjectObject(subject).text} 동아리가 모집중인지 확인하세요!</p>
+                <span className="ml-6 text-xs text-gray-600">총동아리연합회 인스타그램으로 연결됩니다</span>
+            </div>
+            <svg fill="gray" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32">
+                <path d="m375 816-43-43 198-198-198-198 43-43 241 241-241 241Z" />
+            </svg>
+        </div>
+    );
+};
+
+export const getSubjectObject = (subject: SubjectType, physicalClubName?: string): SubjectObject => {
+
+    // 체육분과 인스타그램 Type1
+    const physicalType1List = ["세종스키", "산악부", "세종킹스", "요트부", "FC해례본"];
+    if (physicalClubName && subject === "physical" && physicalType1List.indexOf(physicalClubName) > -1) {
+        return {
+            pageId: "CpNdSG_vrDc",
+            text: "💪 체육분과"
+        };
+    }
+
+    switch (subject) {
+        case "show": return {
+            pageId: "CpNUW-TPlmr",
+            text: "🎤 공연분과"
+        };
+        case "culture": return {
+            pageId: "CpNT_a6P77T",
+            text: "🌸 문화분과"
+        };
+        case "volunteer": return {
+            pageId: "CpNUorRvuKr",
+            text: "🤝 봉사분과"
+        };
+        case "religion": return {
+            pageId: "CpNXoJoPmKE",
+            text: "🙏🏻 종교분과"
+        };
+        case "physical": return {
+            // 체육분과 인스타그램 Type2
+            pageId: "CpNdWBxPsZ3",
+            text: "💪 체육분과"
+        };
+        case "academic": return {
+            pageId: "CpNdh_dvXDD",
+            text: "📖 학술분과"
+        };
+        default: return {
+            pageId: "CpNUW-TPlmr",
+            text: "🎤 공연분과"
+        };
+    }
+}
 
 export const getServerSideProps: GetServerSideProps<ClubsProps> = async ({ params, req, res }) => {
 

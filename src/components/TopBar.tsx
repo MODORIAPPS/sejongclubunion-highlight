@@ -1,7 +1,18 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Modal from 'react-modal';
 
-// 11050
+const customStyles = {
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        outline: 'none',
+    },
+};
 
 const TopBar: React.FC = () => {
 
@@ -74,10 +85,14 @@ const TopBar: React.FC = () => {
                     <path d="M5.5 23C5.1 23 4.75 22.85 4.45 22.55C4.15 22.25 4 21.9 4 21.5V8.775C4 8.375 4.15 8.025 4.45 7.725C4.75 7.425 5.1 7.275 5.5 7.275H9.725V8.775H5.5V21.5H18.5V8.775H14.225V7.275H18.5C18.9 7.275 19.25 7.425 19.55 7.725C19.85 8.025 20 8.375 20 8.775V21.5C20 21.9 19.85 22.25 19.55 22.55C19.25 22.85 18.9 23 18.5 23H5.5ZM11.225 15.325V3.9L9.025 6.1L7.95 5.025L11.975 1L16 5.025L14.925 6.1L12.725 3.9V15.325H11.225Z" fill="#2E3238" />
                 </svg>
             </div>
-            <dialog open={open} className="backdrop-sepia-0 w-[270px] top-40 absolute z-50 p-4 rounded-2xl bg-white">
+            <Modal
+                isOpen={open}
+                style={customStyles}
+                onRequestClose={toggleDialogOpen}
+                className="w-[270px] top-[30%] fixed p-4 rounded-2xl bg-white">
                 <div className="flex flex-row justify-between items-center">
                     <p className="font-bold text-2xl text-gray-700">공유하기</p>
-                    <svg onClick={toggleDialogOpen} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg onClick={toggleDialogOpen} className="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.22499 18.825L5.17499 17.775L10.95 12L5.17499 6.225L6.22499 5.175L12 10.95L17.775 5.175L18.825 6.225L13.05 12L18.825 17.775L17.775 18.825L12 13.05L6.22499 18.825Z" fill="#2E3238" />
                     </svg>
                 </div>
@@ -112,7 +127,7 @@ const TopBar: React.FC = () => {
                         </p>
                     </div>
                 </div>
-            </dialog>
+            </Modal>
         </>
     );
 };

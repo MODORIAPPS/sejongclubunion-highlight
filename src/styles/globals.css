@@ -72,5 +72,11 @@
 }
 
 dialog::backdrop {
-  background-color: #F1CB23;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.2),
+    rgba(255, 0, 0, 0.2) 1px,
+    rgba(255, 0, 0, 0.3) 1px,
+    rgba(255, 0, 0, 0.3) 20px
+  );
 }
