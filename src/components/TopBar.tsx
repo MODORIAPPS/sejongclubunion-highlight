@@ -10,9 +10,15 @@ const customStyles = {
         bottom: 'auto',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
-        outline: 'none',
+        outline: 'none'
     },
+    overlay: {
+        zIndex: 9999,
+        background: "#00000075"
+    }
 };
+
+Modal.setAppElement('#modal-root');
 
 const TopBar: React.FC = () => {
 

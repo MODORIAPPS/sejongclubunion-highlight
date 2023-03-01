@@ -1,5 +1,8 @@
 import DepartmentArrow from '@/components/DepartmentArrow';
+import Footer from '@/components/Footer';
+import MapView from '@/components/MapView';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Home: React.FC = () => {
   return (
@@ -13,6 +16,8 @@ const Home: React.FC = () => {
       <div className='relative max-w-3xl mx-auto'>
         <Video />
         <DepartmentStatus />
+        <MapView />
+        <Footer />
       </div>
     </>
   )
@@ -34,9 +39,9 @@ const Video: React.FC = () => {
             여러분을 기다리고 있어요!
           </p>
           <div className='flex flex-row justify-center'>
-            <div className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl">
+            <Link href="/form" className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
               <span className='font-bold text-white'>✈️ 지금 찾아보기</span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

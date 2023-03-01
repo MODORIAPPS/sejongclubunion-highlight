@@ -21,7 +21,10 @@ const ClubItem: React.FC<ClubItemProps> = ({ logo, title, shortDesc, subject }) 
             <Image alt="logo" width={64} height={64} className="min-w-[64px] w-16 h-16 object-contain mr-6 rounded-lg" src={logo} />
             <div className="flex flex-col">
                 <p className="font-bold text-xl mb-1 text-gray-700">{title}</p>
-                <p className="text-gray-500">{shortDesc}</p>
+                <p className="text-gray-500 mb-2">{shortDesc}</p>
+                <div className="flex">
+                    <p className="p-2 text-xs font-bold text-[#F1CB23] bg-[#f1cb2346] rounded-lg">지원하기</p>
+                </div>
             </div>
         </div>
     );

@@ -69,6 +69,9 @@
 
 :root {
   --color-primary: #F1CB23;
+  --rsbs-backdrop-bg: rgba(0, 0, 0, 0);
+  --rsbs-bg: red;
+  --rsbs-handle-bg: white;
 }
 
 dialog::backdrop {

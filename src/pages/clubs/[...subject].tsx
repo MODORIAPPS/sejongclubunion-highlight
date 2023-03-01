@@ -1,11 +1,13 @@
+import Footer from "@/components/Footer";
+import MapView from "@/components/MapView";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
-import ClubItem from "./components/ClubItem";
-import SubjectTitle from "./components/SubjectTitle";
 import useFetchClubList from "../../hooks/useFetchClubList";
 import { isSubjectType, SubjectType } from "../../models/subject.type";
+import ClubItem from "./components/ClubItem";
+import SubjectTitle from "./components/SubjectTitle";
 
 interface ClubsProps {
     subject: SubjectType;
@@ -32,7 +34,7 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
             <Head>
                 <meta property="og:url" content={"https://find.sejongclubunion.com/clubs/" + subject} />
                 <meta property="og:type" content="website" />
-                <meta property="og:image" content="표시되는 이미지" />
+                {/* <meta property="og:image" content="표시되는 이미지" /> */}
                 <meta property="og:title" content={`총동아리연합회 - ${getSubjectName()}분과`} />
                 <meta property="og:description" content={`${getSubjectName()}분과 목록을 소개합니다.`} />
             </Head>
@@ -57,14 +59,17 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
                                         }
 
                                         let title = "";
-                                        if (club.properties.Name.type === "title") {
+                                        if (club?.properties?.Name?.type === "title" && club.properties.Name.title.length > 0) {
                                             title = club.properties.Name.title[0].plain_text;
                                         }
 
                                         let shortDesc = "";
-                                        if (club.properties.short_desc.type === "rich_text") {
+                                        if (club?.properties?.short_desc?.type === "rich_text" && club.properties.short_desc.rich_text.length > 0) {
                                             shortDesc = club.properties.short_desc.rich_text[0].plain_text;
                                         }
+
+                                        if (!logo || !title || !shortDesc) return <></>;
+
                                         return (
                                             <ClubItem
                                                 key={title}
@@ -79,6 +84,8 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
                             </>
                     }
                 </div>
+                <MapView />
+                <Footer />
             </div>
         </>
     );
@@ -96,9 +103,9 @@ const RecruitBanner: React.FC<{ subject: SubjectType }> = ({ subject }) => {
     };
 
     return (
-        <div onClick={handleClickBanner} className="flex items-center justify-between px-4 py-4 bg-[#ffdf53] rounded-2xl">
+        <div onClick={handleClickBanner} className="flex items-center justify-between px-4 py-4 bg-[#ffdf53] rounded-2xl cursor-pointer">
             <div className="flex flex-col">
-                <p className="font-bold text-gray-700">{getSubjectObject(subject).text} 동아리가 모집중인지 확인하세요!</p>
+                <p className="font-bold text-gray-700">{getSubjectObject(subject).text} 동아리의 모집기간을 확인하세요!</p>
                 <span className="ml-6 text-xs text-gray-600">총동아리연합회 인스타그램으로 연결됩니다</span>
             </div>
             <svg fill="gray" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32">
