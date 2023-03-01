@@ -5,7 +5,7 @@ const StartFragment: React.FC<ControllerProps> = ({ goNext }) => {
 
     return (
         <div className="relative h-screen">
-            <video style={{ objectFit: "cover" }} className='absolute top-[-30%] w-screen h-screen' src="/aircraft.mp4" loop autoPlay muted controls={false} playsInline />
+            <video style={{ objectFit: "cover" }} className='absolute sm:top-0 top-[-30%] w-screen h-screen' src="/aircraft.mp4" loop autoPlay muted controls={false} playsInline />
             <div className="absolute z-4 w-full h-screen bg-gradient-to-t from-[#00000091] to-[#ffffff00] opacity-90" />
 
             <div className="w-full text-center  absolute top-[25%]">

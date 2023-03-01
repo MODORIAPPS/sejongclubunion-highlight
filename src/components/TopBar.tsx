@@ -19,7 +19,6 @@ const customStyles = {
 };
 
 Modal.setAppElement('#modal-root');
-
 const TopBar: React.FC = () => {
 
     const [open, setOpen] = useState(false);
@@ -27,8 +26,46 @@ const TopBar: React.FC = () => {
     const toggleDialogOpen = () => setOpen(!open);
 
     useEffect(() => {
+        if(typeof window === 'undefined') return;
         try {
             if (!window.Kakao.isInitialized()) window.Kakao.init('003fd24187cf3803e9ae50a3a3d85ec1');
+
+            (window as any).Kakao.Share.createDefaultButton({
+                container: '#kakaotalk-sharing-btn',
+                objectType: 'feed',
+                content: {
+                    title: '내게 맞는 동아리 찾기',
+                    description: '내게 맞는 동아리 찾기',
+                    imageUrl:
+                        'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+                    link: {
+                        // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
+                        mobileWebUrl: 'https://find.sejongclubunion.com',
+                        webUrl: 'https://find.sejongclubunion.com',
+                    },
+                },
+                social: {
+                    likeCount: 286,
+                    commentCount: 45,
+                    sharedCount: 845,
+                },
+                buttons: [
+                    {
+                        title: '웹으로 보기',
+                        link: {
+                            mobileWebUrl: 'https://find.sejongclubunion.com',
+                            webUrl: 'https://find.sejongclubunion.com',
+                        },
+                    },
+                    {
+                        title: '총동연에게 문의하기',
+                        link: {
+                            mobileWebUrl: 'https://alpha.sejongclubunion.com/faq',
+                            webUrl: 'https://alpha.sejongclubunion.com/faq',
+                        },
+                    }
+                ],
+            });
         } catch (e) {
             console.log(e);
         }
@@ -37,45 +74,10 @@ const TopBar: React.FC = () => {
     const handleClickCopy = () => {
         window.navigator.clipboard.writeText("https://find.sejongclubunion.com");
         alert("복사되었습니다!")
-    }
+    };
 
-    const handleClickKakaoShare = () => {
-        (window as any).Kakao.Share.createDefaultButton({
-            container: '#kakaotalk-sharing-btn',
-            objectType: 'feed',
-            content: {
-                title: '내게 맞는 동아리 찾기',
-                description: '내게 맞는 동아리 찾기',
-                imageUrl:
-                    'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-                link: {
-                    // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-                    mobileWebUrl: 'https://find.sejongclubunion.com',
-                    webUrl: 'https://find.sejongclubunion.com',
-                },
-            },
-            social: {
-                likeCount: 286,
-                commentCount: 45,
-                sharedCount: 845,
-            },
-            buttons: [
-                {
-                    title: '웹으로 보기',
-                    link: {
-                        mobileWebUrl: 'https://find.sejongclubunion.com',
-                        webUrl: 'https://find.sejongclubunion.com',
-                    },
-                },
-                {
-                    title: '총동연에게 문의하기',
-                    link: {
-                        mobileWebUrl: 'https://alpha.sejongclubunion.com/faq',
-                        webUrl: 'https://alpha.sejongclubunion.com/faq',
-                    },
-                }
-            ],
-        });
+    const handleClickInstagram = () => {
+        window.open("https://www.instagram.com/sejong_clubunion/");
     };
 
     return (
@@ -116,7 +118,7 @@ const TopBar: React.FC = () => {
                             링크 복사
                         </p>
                     </div>
-                    <div id="kakaotalk-sharing-btn" onClick={handleClickKakaoShare} className="flex flex-col justify-center items-center rounded-lg hover:bg-gray-100 p-1 cursor-pointer">
+                    <div id="kakaotalk-sharing-btn" className="flex flex-col justify-center items-center rounded-lg hover:bg-gray-100 p-1 cursor-pointer">
                         <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]">
                             <img width={24} height={24} src="/images/logo/kakaotalk.png" />
                         </div>
@@ -124,7 +126,7 @@ const TopBar: React.FC = () => {
                             카카오톡
                         </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center rounded-lg hover:bg-gray-100 p-1 cursor-pointer">
+                    <div onClick={handleClickInstagram} className="flex flex-col justify-center items-center rounded-lg hover:bg-gray-100 p-1 cursor-pointer">
                         <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]">
                             <img width={24} height={24} src="/images/logo/instagram.png" />
                         </div>

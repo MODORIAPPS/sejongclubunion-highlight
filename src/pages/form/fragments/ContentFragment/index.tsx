@@ -18,7 +18,7 @@ const ContentFragment: React.FC<ControllerProps> = ({ goNext }) => {
     };
 
     useEffect(() => {
-        if (currentIndex === questions.length) {
+        if (currentIndex === questions.length + 1) {
             goNext();
         }
     }, [currentIndex]);
@@ -32,14 +32,14 @@ const ContentFragment: React.FC<ControllerProps> = ({ goNext }) => {
                     <img className="absolute z-[-10] left-[50%] top-[30%] translate-x-[-50%] translate-y-[-30%] w-60 opacity-30 mx-auto" src={"/images/plane-window.png"} />
                     <h1 className="z-10 px-6 text-center font-bold text-3xl text-gray-700">
                         🧐<br />
-                        {questions[currentIndex - 1].question}
+                        {questions[currentIndex - 1]?.question}
                     </h1>
                 </div>
             </div>
             <div className="absolute bottom-4 px-4 w-full">
                 <div>
                     {
-                        questions[currentIndex - 1].options.map((option, i) =>
+                        questions[currentIndex - 1]?.options.map((option, i) =>
                             <FormButton
                                 key={i}
                                 index={i}
