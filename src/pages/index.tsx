@@ -32,7 +32,7 @@ const Video: React.FC = () => {
         <div>
           <p className='text-center mb-2 text-white font-bold text-4xl leading-normal'>
             내게 맞는<br />
-            <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>동아리</span> 찾아보기
+            <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FBAB7E] to-[#F7CE68]'>동아리</span> 찾아보기
           </p>
           <p className="text-lg text-center text-white mb-5">
             40개가 넘는 중앙동아리가 <br />
