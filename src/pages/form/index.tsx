@@ -27,7 +27,6 @@ const Form: React.FC = () => {
             <Head>
                 <meta property="og:url" content={"https://find.sejongclubunion.com/form/"} />
                 <meta property="og:type" content="website" />
-                {/* <meta property="og:image" content="표시되는 이미지" /> */}
                 <meta property="og:title" content={`총동아리연합회 - 나에게 맞는 동아리 찾기`} />
                 <meta property="og:description" content={`나에게 맞는 동아리를 찾아보아요!`} />
             </Head>
