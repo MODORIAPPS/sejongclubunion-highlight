@@ -1,7 +1,7 @@
 import { SubjectType } from "@/models/subject.type";
 import Image from "next/image";
 import React from "react";
-import { getSubjectObject } from "../[...subject]";
+import { getSubjectObject } from "../[subject]";
 
 interface ClubItemProps {
     logo: string;

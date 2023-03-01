@@ -1,5 +1,5 @@
 import useWindowDimensions from "@/hooks/useWindowDimensions";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 interface ProgressBarProps {
     current: number;
@@ -15,8 +15,24 @@ const ProgressBar: React.FC<ProgressBarProps> = (
     }
 ) => {
 
-    const { width } = useWindowDimensions();
-    const slideWidth = useMemo(() => ((width - 32) / max) * (current - 1), [width, current]);
+    const [width, setWidth] = useState(0);
+
+    useEffect(() => {
+        const progressBg = window.document.getElementById("progress-bg");
+        if (!progressBg) return;
+
+        const myObserver = new ResizeObserver(() => {
+            setWidth(progressBg.clientWidth);
+            console.log(progressBg.clientWidth);
+        });
+        myObserver.observe(progressBg);
+
+        return () => {
+            myObserver.unobserve(progressBg);
+        };
+    }, []);
+
+    const slideWidth = useMemo(() => ((width) / max) * (current), [width, current]);
 
     return (
         <div className="w-full h-14 px-6 py-2">
@@ -25,9 +41,11 @@ const ProgressBar: React.FC<ProgressBarProps> = (
                 <div className="w-full flex-1 relative">
                     <div style={{ width: slideWidth }} className="absolute h-[10px] bg-[#F1CB23] rounded-lg transition-all duration-500" />
                     <img style={{ left: slideWidth - 10 }} className="absolute w-8 h-8 bottom-[-13px] transition-all duration-500" src="/images/airplane.png" />
-                    <div className="w-full h-[10px] bg-[#D9D9D9] rounded-lg" />
+                    <div id="progress-bg" className="w-full h-[10px] bg-[#D9D9D9] rounded-lg" />
                 </div>
-                <p className="text-gray-800 ml-4 text-lg text-center">{current}/{max}</p>
+                <p className="text-gray-800 ml-4 text-lg text-center">
+                    {(current > max ? max : current)}/{max}
+                </p>
             </div>
         </div>
     );

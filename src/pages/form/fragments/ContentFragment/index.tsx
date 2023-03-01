@@ -27,10 +27,10 @@ const ContentFragment: React.FC<ControllerProps> = ({ goNext }) => {
         <div className="max-w-xl mx-auto pt-16 h-screen relative">
             <ProgressBar max={questions.length} current={currentIndex} title="내게 맞는 동아리 찾아보기" />
 
-            <div className="absolute top-[30%]">
+            <div className="absolute top-[30%] left-[50%] translate-x-[-50%]">
                 <div className="relative">
                     <img className="absolute z-[-10] left-[50%] top-[30%] translate-x-[-50%] translate-y-[-30%] w-60 opacity-30 mx-auto" src={"/images/plane-window.png"} />
-                    <h1 className="z-10 px-6 text-center font-bold text-3xl text-gray-700">
+                    <h1 className="min-w-[350px] z-10 px-6 text-center font-bold text-3xl text-gray-700">
                         🧐<br />
                         {questions[currentIndex - 1]?.question}
                     </h1>

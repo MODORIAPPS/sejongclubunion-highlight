@@ -32,7 +32,7 @@ const LoadingFragment: React.FC = () => {
     useEffect(() => {
         setTimeout(() => {
             // router.push("/form/result/" + findHighestCountObjectName(result));
-            router.push("/clubs/" + findHighestCountObjectName(result));
+            router.push("/clubs/" + findHighestCountObjectName(result) + "/form=scu");
         }, 3000);
     }, []);
 

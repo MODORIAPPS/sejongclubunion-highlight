@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import MapView from "@/components/MapView";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
 import useFetchClubList from "../../hooks/useFetchClubList";
@@ -15,6 +16,7 @@ interface ClubsProps {
 
 const Clubs: React.FC<ClubsProps> = ({ subject }) => {
 
+    const { query } = useRouter();
     const { data: clubList, loading } = useFetchClubList(subject);
 
     const getSubjectName = () => {
@@ -27,7 +29,7 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
             case "academic": return "학술";
             default: return "";
         }
-    }
+    };
 
     return (
         <>
@@ -38,6 +40,7 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
                 <meta property="og:description" content={`${getSubjectName()}분과 목록을 소개합니다.`} />
             </Head>
             <div className="max-w-3xl mx-auto pt-16">
+                {query.form && <FindMyTypeBanner subject={subject} />}
                 <SubjectTitle subject={subject} />
                 <RecruitBanner subject={subject} />
                 <div className="my-8">
@@ -89,6 +92,19 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
         </>
     );
 };
+
+const FindMyTypeBanner: React.FC<{ subject: SubjectType }> = ({ subject }) => {
+
+    return (
+        <div className="mt-4 flex items-center justify-between px-4 py-4 bg-[#5da5da] rounded-2xl cursor-pointer">
+            <div className="flex flex-col text-white">
+                <p className="font-bold">{getSubjectObject(subject).text} 동아리가 어울리시는 것 같아요!</p>
+                <span className="ml-6 text-xs">각 동아리를 누르시면 총동아리연합회 인스타그램으로 연결됩니다</span>
+            </div>
+        </div>
+    );
+};
+
 interface SubjectObject {
     /** Instagram PageId */
     pageId: string;
@@ -168,7 +184,7 @@ export const getServerSideProps: GetServerSideProps<ClubsProps> = async ({ param
     const subject = params?.subject;
 
     // data 없을 땐 리턴값을 달리함
-    if (!subject || subject.length !== 1 || !isSubjectType(subject[0])) {
+    if (!subject || typeof subject !== "string" || !isSubjectType(subject)) {
         return {
             redirect: {
                 destination: '/',
@@ -178,7 +194,7 @@ export const getServerSideProps: GetServerSideProps<ClubsProps> = async ({ param
     }
 
     const _props: ClubsProps = {
-        subject: subject[0]
+        subject
     }
 
     return { props: _props };
