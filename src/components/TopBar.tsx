@@ -26,54 +26,69 @@ const TopBar: React.FC = () => {
     const toggleDialogOpen = () => setOpen(!open);
 
     useEffect(() => {
-        if(typeof window === 'undefined') return;
-        try {
-            if (!window.Kakao.isInitialized()) window.Kakao.init('003fd24187cf3803e9ae50a3a3d85ec1');
+        const handleLoad = () => {
+            try {
+                if (!window.Kakao.isInitialized()) window.Kakao.init('003fd24187cf3803e9ae50a3a3d85ec1');
 
-            (window as any).Kakao.Share.createDefaultButton({
-                container: '#kakaotalk-sharing-btn',
-                objectType: 'feed',
-                content: {
-                    title: '내게 맞는 동아리 찾기',
-                    description: '내게 맞는 동아리 찾기',
-                    imageUrl:
-                        'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-                    link: {
-                        // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-                        mobileWebUrl: 'https://find.sejongclubunion.com',
-                        webUrl: 'https://find.sejongclubunion.com',
-                    },
-                },
-                social: {
-                    likeCount: 286,
-                    commentCount: 45,
-                    sharedCount: 845,
-                },
-                buttons: [
-                    {
-                        title: '웹으로 보기',
+                (window as any).Kakao.Share.createDefaultButton({
+                    container: '#hiddenme',
+                    objectType: 'feed',
+                    content: {
+                        title: '내게 맞는 동아리 찾기',
+                        description: '간단한 테스트로 내게 맞는 동아리를 찾아보아요!',
+                        imageUrl:
+                            'https://find.sejongclubunion.com/images/head_og.png',
                         link: {
+                            // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
                             mobileWebUrl: 'https://find.sejongclubunion.com',
                             webUrl: 'https://find.sejongclubunion.com',
                         },
                     },
-                    {
-                        title: '총동연에게 문의하기',
-                        link: {
-                            mobileWebUrl: 'https://alpha.sejongclubunion.com/faq',
-                            webUrl: 'https://alpha.sejongclubunion.com/faq',
+                    social: {
+                        likeCount: 286,
+                        commentCount: 45,
+                        sharedCount: 845,
+                    },
+                    buttons: [
+                        {
+                            title: '웹으로 보기',
+                            link: {
+                                mobileWebUrl: 'https://find.sejongclubunion.com',
+                                webUrl: 'https://find.sejongclubunion.com',
+                            },
                         },
-                    }
-                ],
-            });
-        } catch (e) {
-            console.log(e);
+                        {
+                            title: '총동연에게 문의하기',
+                            link: {
+                                mobileWebUrl: 'https://alpha.sejongclubunion.com/faq',
+                                webUrl: 'https://alpha.sejongclubunion.com/faq',
+                            },
+                        }
+                    ],
+                });
+            } catch (e) {
+                console.log(e);
+            }
+        };
+
+        if (typeof window !== 'undefined' && window.addEventListener) {
+            window.addEventListener('load', handleLoad);
         }
+
+        return () => {
+            if (typeof window !== 'undefined' && window.removeEventListener) {
+                window.removeEventListener('load', handleLoad);
+            }
+        };
     }, []);
 
     const handleClickCopy = () => {
         window.navigator.clipboard.writeText("https://find.sejongclubunion.com");
         alert("복사되었습니다!")
+    };
+
+    const handleClickKakaoTalk = () => {
+        document?.getElementById("hiddenme")?.click();
     };
 
     const handleClickInstagram = () => {
@@ -82,6 +97,7 @@ const TopBar: React.FC = () => {
 
     return (
         <>
+            <div id="hiddenme" className="hidden" />
             <div className="fixed z-20 w-full p-5 bg-white flex flex-row justify-between items-center border-b-[1px] border-bg-gray-400">
                 <Link href="/">
                     <img width={24} height={24} className="mr-2 inline-block" src={"/light_logo.png"} />
@@ -118,7 +134,7 @@ const TopBar: React.FC = () => {
                             링크 복사
                         </p>
                     </div>
-                    <div id="kakaotalk-sharing-btn" className="flex flex-col justify-center items-center rounded-lg hover:bg-gray-100 p-1 cursor-pointer">
+                    <div onClick={handleClickKakaoTalk} id="kakaotalk-sharing-btn" className="flex flex-col justify-center items-center rounded-lg hover:bg-gray-100 p-1 cursor-pointer">
                         <div className="flex items-center justify-center w-16 h-16 rounded-full bg-[#FAFAFA]">
                             <img width={24} height={24} src="/images/logo/kakaotalk.png" />
                         </div>
