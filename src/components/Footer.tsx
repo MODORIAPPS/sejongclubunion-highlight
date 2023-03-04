@@ -4,6 +4,10 @@ interface FooterProps { }
 
 const Footer: React.FC<FooterProps> = () => {
 
+    const handleClickUnion = () => {
+        window.open("https://sejongclubunion.com");
+    };
+
     const handleClickInstagram = () => {
         window.open("https://www.instagram.com/sejong_clubunion/");
     };
@@ -25,7 +29,8 @@ const Footer: React.FC<FooterProps> = () => {
                     05006 서울특별시 광진구 능동로 209 세종대학교 학생회관 408호<br />
                     Copyright(C) 세종대학교 제 41대 총동아리연합회 라이트 All rights reserved <br />
                 </p>
-                <span onClick={handleClickInstagram} className="text-sm font-bold text-[#9A9A9A] cursor-pointer hover:underline">인스타그램</span>
+                <span onClick={handleClickUnion} className="text-sm font-bold text-[#9A9A9A] cursor-pointer underline mr-4">총동아리연합회 웹사이트</span>
+                <span onClick={handleClickInstagram} className="text-sm font-bold text-[#9A9A9A] cursor-pointer underline">인스타그램</span>
             </div>
         </div>
     );

@@ -34,6 +34,7 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
     return (
         <>
             <Head>
+                <title>{`총동아리연합회 - ${getSubjectName()}분과`}</title>
                 <meta property="og:url" content={"https://find.sejongclubunion.com/clubs/" + subject} />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content={`총동아리연합회 - ${getSubjectName()}분과`} />
