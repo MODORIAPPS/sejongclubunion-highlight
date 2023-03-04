@@ -2,6 +2,7 @@ import DepartmentArrow from '@/components/DepartmentArrow';
 import Footer from '@/components/Footer';
 import MapView from '@/components/MapView';
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Home: React.FC = () => {
@@ -15,6 +16,7 @@ const Home: React.FC = () => {
       </Head>
       <div className='relative max-w-3xl mx-auto'>
         <Video />
+        <MapAndTimeTable />
         <DepartmentStatus />
         <MapView />
         <Footer />
@@ -26,7 +28,7 @@ const Home: React.FC = () => {
 const Video: React.FC = () => {
   return (
     <div className="relative h-screen">
-      <video style={{objectFit: "cover"}} className='absolute w-screen h-screen' src="/intro.mp4" loop autoPlay muted controls={false} playsInline/>
+      <video style={{ objectFit: "cover" }} className='absolute w-screen h-screen' src="/intro.mp4" loop autoPlay muted controls={false} playsInline />
       <div className="absolute z-4 w-full h-screen bg-gradient-to-t from-black to-[#ffffff00] opacity-90" />
       <div className="absolute z-10 bottom-20 w-full">
         <div>
@@ -45,6 +47,50 @@ const Video: React.FC = () => {
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+const MapAndTimeTable = () => {
+
+  const TimeTableBanner: React.FC = () => {
+
+    const handleClickBanner = () => {
+      window.open(`https://www.instagram.com/p/CpSU_n_PbXI`);
+    };
+
+    return (
+      <div onClick={handleClickBanner} className="flex items-center justify-between my-4 px-4 py-4 bg-[#ff875e] rounded-2xl cursor-pointer">
+        <div className="flex flex-col text-white">
+          <p className="font-bold">⏰ 동아리들의 멋진 공연도 보고 가세요!</p>
+          <span className="ml-6 text-xs">시간표 확인하기</span>
+        </div>
+        <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32">
+          <path d="m375 816-43-43 198-198-198-198 43-43 241 241-241 241Z" />
+        </svg>
+      </div>
+    );
+  };
+
+  return (
+    <div>
+      <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
+        🧭 <br />
+        가두모집 동아리 배치도
+      </h2>
+      <p className="text-gray-500 my-4 px-5">
+        동아리 신입부원 모집제는 <b>3월 6일(월)~7일(화) 10:00 ~ 17:00</b> 에 하고,<br />
+        장소는 <b>대양홀 앞</b>, <b>학생회관 잔디밭</b>에서 해요.
+      </p>
+      <TimeTableBanner />
+
+      <Image
+        className='mx-auto'
+        width={300}
+        height={300}
+        alt="club-map"
+        src="/images/map.jpeg"
+      />
     </div>
   );
 };
