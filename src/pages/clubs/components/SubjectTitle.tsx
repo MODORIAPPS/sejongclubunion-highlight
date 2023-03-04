@@ -1,4 +1,4 @@
-import { SubjectType } from "../../../models/subject.type";
+import { isSubjectType, SubjectType } from "../../../models/subject.type";
 
 interface SubjectTitleProps {
     subject: SubjectType
@@ -7,6 +7,8 @@ interface SubjectTitleProps {
 const SubjectTitle: React.FC<SubjectTitleProps> = ({
     subject
 }) => {
+    if (!isSubjectType(subject)) return <></>;
+    
     return (
         <div className="mx-4 my-8">
             <h2 className="text-3xl font-bold text-gray-700 mb-3">
