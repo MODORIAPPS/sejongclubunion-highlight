@@ -1,70 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: "SpoqaHanSansNeo", "TossFaceFontMac", "sans-serif";
+  font-family: "Noto Sans KR", "sans-serif";
 }
 
 .notion-page-icon {
-  font-family: "SpoqaHanSansNeo", "TossFaceFontMac", "sans-serif";
-}
-
-/* TossFaceFont */
-@font-face {
-  font-family: "TossFaceFontMac";
-  src: url("/fonts/TossFaceFontMac.ttf") format("truetype"); /* Safari, Android, iOS */
-}
-
-/* SpokaSansNeo */
-@font-face {
-  font-family: "SpoqaHanSansNeo";
-  font-style: normal;
-  font-weight: 400;
-  src: url(/fonts/SpoqaHanSansNeo-Regular.eot),
-    url(/fonts/SpoqaHanSansNeo-Regular.woff2) format("woff2"),
-    url(/fonts/SpoqaHanSansNeo-Regular.woff) format("woff"),
-    url(/fonts/SpoqaHanSansNeo-Regular.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "SpoqaHanSansNeo";
-  font-style: normal;
-  font-weight: bold;
-  src: url(/fonts/SpoqaHanSansNeo-Bold.eot),
-    url(/fonts/SpoqaHanSansNeo-Bold.woff2) format("woff2"),
-    url(/fonts/SpoqaHanSansNeo-Bold.woff) format("woff"),
-    url(/fonts/SpoqaHanSansNeo-Bold.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "SpoqaHanSansNeo";
-  font-style: normal;
-  font-weight: 200;
-  src: url(/fonts/SpoqaHanSansNeo-Light.eot),
-    url(/fonts/SpoqaHanSansNeo-Light.woff2) format("woff2"),
-    url(/fonts/SpoqaHanSansNeo-Light.woff) format("woff"),
-    url(/fonts/SpoqaHanSansNeo-Light.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "SpoqaHanSansNeo";
-  font-style: normal;
-  font-weight: 600;
-  src: url(/fonts/SpoqaHanSansNeo-Medium.eot),
-    url(/fonts/SpoqaHanSansNeo-Medium.woff2) format("woff2"),
-    url(/fonts/SpoqaHanSansNeo-Medium.woff) format("woff"),
-    url(/fonts/SpoqaHanSansNeo-Medium.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "SpoqaHanSansNeo";
-  font-style: normal;
-  font-weight: 100;
-  src: url(/fonts/SpoqaHanSansNeo-Thin.eot),
-    url(/fonts/SpoqaHanSansNeo-Thin.woff2) format("woff2"),
-    url(/fonts/SpoqaHanSansNeo-Thin.woff) format("woff"),
-    url(/fonts/SpoqaHanSansNeo-Thin.ttf) format("truetype");
+  font-family: "Noto Sans KR", "sans-serif";
 }
 
 :root {

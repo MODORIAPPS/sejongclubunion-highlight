@@ -42,7 +42,10 @@ const Video: React.FC = () => {
           </p>
           <div className='flex flex-row justify-center'>
             <Link href="/form" className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
-              <span className='font-bold text-lg text-white'>🔍 지금 찾아보기</span>
+              <span className='font-bold text-lg text-white flex items-center'>
+                <img className='w-6 h-6 mr-2 inline-block' src="/toss-emojis/4x/u1F50D.png" />
+                지금 찾아보기
+              </span>
             </Link>
           </div>
         </div>
@@ -62,7 +65,10 @@ const MapAndTimeTable = () => {
     return (
       <div onClick={handleClickBanner} className="flex items-center justify-between my-4 px-4 py-4 bg-[#ff875e] rounded-2xl cursor-pointer">
         <div className="flex flex-col text-white">
-          <p className="font-bold">⏰ 동아리들의 멋진 공연도 보고 가세요!</p>
+          <p className="font-bold">
+            <img className='w-4 h-4 mr-2 inline-block' src="/toss-emojis/4x/u23F0.png" />
+            동아리들의 멋진 공연도 보고 가세요!
+          </p>
           <span className="ml-6 text-xs">시간표 확인하기</span>
         </div>
         <svg fill="white" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32">
@@ -75,7 +81,7 @@ const MapAndTimeTable = () => {
   return (
     <div>
       <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
-        🧭 <br />
+        <img className='w-8 h-8 inline-block' src={"/toss-emojis/4x/u1F9ED.png"} /> <br />
         가두모집 동아리 배치도
       </h2>
       <p className="text-gray-500 my-4 px-5">
@@ -99,7 +105,7 @@ const DepartmentStatus = () => {
   return (
     <div>
       <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
-        📚 <br />
+        <img className='w-8 h-8 inline-block' src={"/toss-emojis/2x/u1F4DA.png"} /> <br />
         분과별 동아리 현황
       </h2>
       <p className="text-gray-500 my-4 px-5">
@@ -107,32 +113,32 @@ const DepartmentStatus = () => {
         (공연, 문화, 봉사, 종교, 체육, 학술)
       </p>
       <DepartmentArrow
-        icon={'🎤'}
+        iconUrl={"/toss-emojis/4x/u1F3A4.png"}
         title={'공연분과 (9개)'}
         description={'밴드, 랩, 연극, 노래, 댄스, 풍물 등 공연활동을 하는 동아리입니다.'}
         href={'clubs/show'} />
       <DepartmentArrow
-        icon={'🌼'}
+        iconUrl={"/toss-emojis/4x/u1F33C.png"}
         title={'문화분과 (7개)'}
         description={'다양한 문화 체험, 독서 모임, 문화 예술 전시 등을 하는 동아리입니다.'}
         href={'clubs/culture'} />
       <DepartmentArrow
-        icon={'🧚‍♀️'}
+        iconUrl={"/toss-emojis/4x/u1F9DA.png"}
         title={'봉사분과 (2개)'}
         description={'나눔 활동, 지역 사회 봉사 등을 하는 동아리입니다.'}
         href={'clubs/volunteer'} />
       <DepartmentArrow
-        icon={'🙏🏻'}
+        iconUrl={"/toss-emojis/4x/u1F64F.png"}
         title={'종교분과 (5개)'}
         description={'다양한 종교 체험, 신앙 생활, 예배 등을 하는 동아리입니다.'}
         href={'clubs/religion'} />
       <DepartmentArrow
-        icon={'💪'}
+        iconUrl={"/toss-emojis/4x/u1F4AA.png"}
         title={'체육분과 (14개)'}
         description={'다양한 운동 활동, 스포츠 대회 참여 등을 하는 동아리입니다.'}
         href={'clubs/physical'} />
       <DepartmentArrow
-        icon={'📖'}
+        iconUrl={"/toss-emojis/4x/u1F4D6.png"}
         title={'학술분과 (9개)'}
         description={'학문적 연구, 세미나·강연, 학술 대회 등을 하는 동아리입니다.'}
         href={'clubs/academic'} />

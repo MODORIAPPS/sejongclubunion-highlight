@@ -96,10 +96,16 @@ const Clubs: React.FC<ClubsProps> = ({ subject }) => {
 
 const FindMyTypeBanner: React.FC<{ subject: SubjectType }> = ({ subject }) => {
 
+    const { iconUrl, text } = getSubjectObject(subject);
+
     return (
         <div className="mt-4 flex items-center justify-between px-4 py-4 bg-[#5da5da] rounded-2xl cursor-pointer">
             <div className="flex flex-col text-white">
-                <p className="font-bold">{getSubjectObject(subject).text} 동아리가 어울리시는 것 같아요!</p>
+                <p className="font-bold">
+                    <img className="w-4 h-4 inline-block mr-2" src={iconUrl} />
+                    {text}
+                    동아리가 어울리시는 것 같아요!
+                </p>
                 <span className="ml-6 text-xs">각 동아리를 누르시면 총동아리연합회 인스타그램으로 연결됩니다</span>
             </div>
         </div>
@@ -107,6 +113,8 @@ const FindMyTypeBanner: React.FC<{ subject: SubjectType }> = ({ subject }) => {
 };
 
 interface SubjectObject {
+    iconUrl: string;
+
     /** Instagram PageId */
     pageId: string;
 
@@ -114,14 +122,19 @@ interface SubjectObject {
 }
 const RecruitBanner: React.FC<{ subject: SubjectType }> = ({ subject }) => {
 
+    const { iconUrl, pageId, text } = getSubjectObject(subject);
+
     const handleClickBanner = () => {
-        window.open(`https://www.instagram.com/p/${getSubjectObject(subject).pageId}`);
+        window.open(`https://www.instagram.com/p/${pageId}`);
     };
 
     return (
         <div onClick={handleClickBanner} className="flex items-center justify-between px-4 py-4 bg-[#ffdf53] rounded-2xl cursor-pointer">
             <div className="flex flex-col">
-                <p className="font-bold text-gray-700">{getSubjectObject(subject).text} 동아리의 모집기간을 확인하세요!</p>
+                <p className="font-bold text-gray-700">
+                    <img className="w-4 h-4 inline-block mr-2" src={iconUrl} />
+                    {text} 동아리의 모집기간을 확인하세요!
+                </p>
                 <span className="ml-6 text-xs text-gray-600">총동아리연합회 인스타그램으로 연결됩니다</span>
             </div>
             <svg fill="gray" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32">
@@ -137,40 +150,48 @@ export const getSubjectObject = (subject: SubjectType, physicalClubName?: string
     const physicalType1List = ["세종스키", "산악부", "세종킹스", "요트부", "FC해례본"];
     if (physicalClubName && subject === "physical" && physicalType1List.indexOf(physicalClubName) > -1) {
         return {
+            iconUrl: "/toss-emojis/4x/u1F4AA.png",
             pageId: "CpNdSG_vrDc",
-            text: "💪 체육분과"
+            text: "체육분과"
         };
     }
 
     switch (subject) {
         case "show": return {
+            iconUrl: "/toss-emojis/4x/u1F3A4.png",
             pageId: "CpNUW-TPlmr",
-            text: "🎤 공연분과"
+            text: "공연분과"
         };
         case "culture": return {
+            iconUrl: "/toss-emojis/4x/u1F33C.png",
             pageId: "CpNT_a6P77T",
-            text: "🌼 문화분과"
+            text: "문화분과"
         };
         case "volunteer": return {
+            iconUrl: "/toss-emojis/4x/u1F9DA.png",
             pageId: "CpNUorRvuKr",
-            text: "🧚‍♀️ 봉사분과"
+            text: "봉사분과"
         };
         case "religion": return {
+            iconUrl: "/toss-emojis/4x/u1F64F.png",
             pageId: "CpNXoJoPmKE",
-            text: "🙏🏻 종교분과"
+            text: "종교분과"
         };
         case "physical": return {
+            iconUrl: "/toss-emojis/4x/u1F4AA.png",
             // 체육분과 인스타그램 Type2
             pageId: "CpNdWBxPsZ3",
-            text: "💪 체육분과"
+            text: "체육분과"
         };
         case "academic": return {
+            iconUrl: "/toss-emojis/4x/u1F4D6.png",
             pageId: "CpNdh_dvXDD",
-            text: "📖 학술분과"
+            text: "학술분과"
         };
         default: return {
+            iconUrl: "/toss-emojis/4x/u1F4D6.png",
             pageId: "CpNUW-TPlmr",
-            text: "🎤 공연분과"
+            text: "공연분과"
         };
     }
 }

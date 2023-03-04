@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 interface Props {
-    icon: string;
+    iconUrl: string;
     title: string;
     description: string;
     href: string;
@@ -10,7 +10,7 @@ interface Props {
 
 const DepartmentArrow: React.FC<Props> = (
     {
-        icon,
+        iconUrl,
         title,
         description,
         href
@@ -19,7 +19,8 @@ const DepartmentArrow: React.FC<Props> = (
     return (
         <Link href={href} className="py-4 px-5 flex flex-row justify-between items-center hover:bg-slate-100 rounded-2xl cursor-pointer">
             <div className="container mx-auto flex flex-row">
-                <p className="text-3xl mr-4">{icon}</p>
+                <img className='w-8 h-8 inline-block mr-4' src={iconUrl} />
+                {/* <p className="text-3xl mr-4">{icon}</p> */}
                 <div className="flex flex-col">
                     <h3 className="text-lg font-bold mb-2 text-gray-700">{title}</h3>
                     <p className="text-sm text-gray-500">{description}</p>

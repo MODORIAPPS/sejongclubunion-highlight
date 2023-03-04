@@ -11,7 +11,8 @@ const StartFragment: React.FC<ControllerProps> = ({ goNext }) => {
 
                 <div className="w-full text-center  absolute top-[20%]">
                     <p className="mx-auto font-bold text-white text-3xl">
-                        🔍 <br />
+                        <img className='w-8 h-8 inline-block' src="/toss-emojis/4x/u1F50D.png" />
+                        <br />
                         내게 맞는 <br />동아리 찾아보기
                     </p>
                 </div>

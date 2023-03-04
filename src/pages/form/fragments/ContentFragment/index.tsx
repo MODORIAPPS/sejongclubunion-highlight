@@ -31,7 +31,8 @@ const ContentFragment: React.FC<ControllerProps> = ({ goNext }) => {
                 <div className="relative">
                     <img className="absolute z-[-10] left-[50%] top-[30%] translate-x-[-50%] translate-y-[-30%] w-60 opacity-30 mx-auto" src={"/images/plane-window.png"} />
                     <h1 className="min-w-[350px] z-10 px-6 text-center font-bold text-3xl text-gray-700">
-                        🧐<br />
+                        <img className='w-8 h-8 inline-block' src="/toss-emojis/4x/u1F9D0.png" />
+                        <br />
                         {questions[currentIndex - 1]?.question}
                     </h1>
                 </div>
@@ -68,7 +69,7 @@ const FormButton: React.FC<FormButtonProps> = (
     }) => {
 
     return (
-        <div onClick={() => onClick(index)} className="p-3 w-full bg-[#F1CB23] mb-2 rounded-2xl hover:bg-[#d1b01d]">
+        <div onClick={() => onClick(index)} className="p-3 w-full bg-[#F1CB23] mb-2 rounded-2xl active:bg-[#d1b01d]">
             <p className="text-center text-white">{children}</p>
         </div>
     );

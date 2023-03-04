@@ -25,7 +25,7 @@ const MapView: React.FC = () => {
   return (
     <div className='p-5 my-4 rounded-lg bg-[#F8F8F8]'>
       <h2 className="text-gray-700 font-bold text-2xl">
-        🗺️ <br />
+        <img className="w-6 h-6 inline-block" src="/toss-emojis/4x/u1F5FA.png" /> <br />
         동아리실 배치도
       </h2>
       <p className="text-gray-500 my-4">
