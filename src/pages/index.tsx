@@ -42,7 +42,7 @@ const Video: React.FC = () => {
           </p>
           <div className='flex flex-row justify-center'>
             <Link href="/form" className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
-              <span className='font-bold text-white'>✈️ 지금 찾아보기</span>
+              <span className='font-bold text-lg text-white'>🔍 지금 찾아보기</span>
             </Link>
           </div>
         </div>
@@ -107,17 +107,17 @@ const DepartmentStatus = () => {
         (공연, 문화, 봉사, 종교, 체육, 학술)
       </p>
       <DepartmentArrow
-        icon={'🎻'}
+        icon={'🎤'}
         title={'공연분과 (9개)'}
         description={'밴드, 랩, 연극, 노래, 댄스, 풍물 등 공연활동을 하는 동아리입니다.'}
         href={'clubs/show'} />
       <DepartmentArrow
-        icon={'💃'}
+        icon={'🌼'}
         title={'문화분과 (7개)'}
         description={'다양한 문화 체험, 독서 모임, 문화 예술 전시 등을 하는 동아리입니다.'}
         href={'clubs/culture'} />
       <DepartmentArrow
-        icon={'🤝'}
+        icon={'🧚‍♀️'}
         title={'봉사분과 (2개)'}
         description={'나눔 활동, 지역 사회 봉사 등을 하는 동아리입니다.'}
         href={'clubs/volunteer'} />
@@ -132,7 +132,7 @@ const DepartmentStatus = () => {
         description={'다양한 운동 활동, 스포츠 대회 참여 등을 하는 동아리입니다.'}
         href={'clubs/physical'} />
       <DepartmentArrow
-        icon={'🔬'}
+        icon={'📖'}
         title={'학술분과 (9개)'}
         description={'학문적 연구, 세미나·강연, 학술 대회 등을 하는 동아리입니다.'}
         href={'clubs/academic'} />

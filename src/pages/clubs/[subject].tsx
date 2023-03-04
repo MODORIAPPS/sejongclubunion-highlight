@@ -149,11 +149,11 @@ export const getSubjectObject = (subject: SubjectType, physicalClubName?: string
         };
         case "culture": return {
             pageId: "CpNT_a6P77T",
-            text: "🌸 문화분과"
+            text: "🌼 문화분과"
         };
         case "volunteer": return {
             pageId: "CpNUorRvuKr",
-            text: "🤝 봉사분과"
+            text: "🧚‍♀️ 봉사분과"
         };
         case "religion": return {
             pageId: "CpNXoJoPmKE",

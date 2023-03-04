@@ -6,7 +6,7 @@ import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div>
+    <div className='h-full'>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
         strategy="afterInteractive"

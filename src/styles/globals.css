@@ -74,6 +74,10 @@
   --rsbs-handle-bg: white;
 }
 
+#__next {
+  height: 100%;
+}
+
 dialog::backdrop {
   background: repeating-linear-gradient(
     45deg,

@@ -3,7 +3,7 @@ import Script from 'next/script'
 
 export default function Document() {
   return (
-    <Html lang="en">
+    <Html lang="ko" className='h-full'>
       <Head >
         <meta property="og:image" content="https://find.sejongclubunion.com/images/head_og.png" />
         <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js" integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossOrigin="anonymous"></script>
@@ -14,7 +14,7 @@ export default function Document() {
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-5CD82MB');`}}></Script>
       </Head>
-      <body>
+      <body className='h-full'>
         <Main />
         <div id='modal-root' />
         <NextScript />
