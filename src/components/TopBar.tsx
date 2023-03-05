@@ -92,25 +92,7 @@ const TopBar: React.FC = () => {
     };
 
     const handleClickInstagram = async () => {
-
-        if (!navigator.share) {
-            window.open("https://www.instagram.com/create/story");
-            return;
-        }
-
-        const image = 'https://find.sejongclubunion.com/images/intro-thumbnail.jpeg'; // 공유할 이미지의 URL을 입력하세요.
-        const caption = '캡션 울트라 캡션~'; // 스토리에 추가할 캡션을 입력하세요.
-        const hashtags = '#'; // 스토리에 추가할 해시태그를 입력하세요.
-
-        const url = `instagram-stories://share?backgroundImage=${encodeURIComponent(image)}&topBackgroundColor=%23ffffff&bottomBackgroundColor=%23ffffff&contentUrl=&%20caption=${encodeURIComponent(caption)}&%20attributionUrl=${encodeURIComponent(window.location.href)}&%20utmSource=share_sheet&%20utmMedium=button&%20utmCampaign=story&hashtag=${hashtags}`;
-
-        try {
-            await window.navigator.share({ url });
-        } catch (error) {
-            alert(error);
-            console.error('Instagram 스토리 공유 중 오류가 발생했습니다:', error);
-        }
-
+        window.open("https://www.instagram.com/create/story");
     };
 
     return (

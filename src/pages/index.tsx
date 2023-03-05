@@ -100,7 +100,7 @@ const MapAndTimeTable = () => {
         width={300}
         height={300}
         alt="club-map"
-        src="/images/map.jpeg"
+        src="/images/map.png"
       />
     </div>
   );
