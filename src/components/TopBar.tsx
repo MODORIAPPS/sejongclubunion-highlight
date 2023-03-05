@@ -99,7 +99,7 @@ const TopBar: React.FC = () => {
         const url = `instagram-stories://share?backgroundImage=${encodeURIComponent(image)}&topBackgroundColor=%23ffffff&bottomBackgroundColor=%23ffffff&contentUrl=&%20caption=${encodeURIComponent(caption)}&%20attributionUrl=${encodeURIComponent(window.location.href)}&%20utmSource=share_sheet&%20utmMedium=button&%20utmCampaign=story`;
 
         try {
-            await window.navigator.share({ url });
+            await navigator.share({ url });
         } catch (error) {
             alert(error);
             console.error('Instagram 스토리 공유 중 오류가 발생했습니다:', error);
