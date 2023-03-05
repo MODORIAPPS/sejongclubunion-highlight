@@ -6,7 +6,11 @@ const StartFragment: React.FC<ControllerProps> = ({ goNext }) => {
     return (
         <>
             <div className="relative h-full">
-                <video style={{ objectFit: "cover" }} className='absolute sm:top-0 top-[-30%] w-screen h-full' src="/aircraft.mp4" loop autoPlay muted controls={false} playsInline />
+                <video
+                    poster="/images/aircraft-thumbnail.jpeg"
+                    style={{ objectFit: "cover" }}
+                    className='absolute sm:top-0 top-[-30%] w-screen h-full'
+                    src="/aircraft.mp4" loop autoPlay muted controls={false} playsInline />
                 <div className="absolute z-4 w-full h-full bg-gradient-to-t from-[#00000091] to-[#ffffff00] opacity-90" />
 
                 <div className="w-full text-center  absolute top-[20%]">
