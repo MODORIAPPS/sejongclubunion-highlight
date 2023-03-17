@@ -1,6 +1,7 @@
 import React from "react";
 import { DepartmentStatus } from "..";
 import Head from "next/head";
+import Footer from "@/components/Footer";
 
 const Clubs: React.FC = () => {
     return (
@@ -11,9 +12,10 @@ const Clubs: React.FC = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className='relative max-w-3xl mx-auto pt-14'>
+            <div className='relative max-w-3xl mx-auto pt-14 mb-10'>
                 <DepartmentStatus />
             </div>
+            <Footer />
         </>
     );
 };
