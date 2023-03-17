@@ -60,8 +60,8 @@ const TopBar: React.FC = () => {
                         {
                             title: '총동연에게 문의하기',
                             link: {
-                                mobileWebUrl: 'https://alpha.sejongclubunion.com/faq',
-                                webUrl: 'https://alpha.sejongclubunion.com/faq',
+                                mobileWebUrl: 'https://sejongclubunion.com/faq',
+                                webUrl: 'https://sejongclubunion.com/faq',
                             },
                         }
                     ],
