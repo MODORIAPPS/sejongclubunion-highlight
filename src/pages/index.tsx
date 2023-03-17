@@ -106,7 +106,7 @@ const MapAndTimeTable = () => {
   );
 };
 
-const DepartmentStatus = () => {
+export const DepartmentStatus = () => {
   return (
     <div>
       <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">

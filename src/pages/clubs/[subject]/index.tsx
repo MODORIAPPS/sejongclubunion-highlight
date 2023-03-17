@@ -5,10 +5,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css';
-import useFetchClubList from "../../hooks/useFetchClubList";
-import { isSubjectType, SubjectType } from "../../models/subject.type";
-import ClubItem from "./components/ClubItem";
-import SubjectTitle from "./components/SubjectTitle";
+import useFetchClubList from "../../../hooks/useFetchClubList";
+import { isSubjectType, SubjectType } from "../../../models/subject.type";
+import ClubItem from "../components/ClubItem";
+import SubjectTitle from "../components/SubjectTitle";
 
 interface ClubsProps {
     subject: SubjectType;
