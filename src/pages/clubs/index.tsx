@@ -2,6 +2,7 @@ import React from "react";
 import { DepartmentStatus } from "..";
 import Head from "next/head";
 import Footer from "@/components/Footer";
+import MapView from "@/components/MapView";
 
 const Clubs: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Clubs: React.FC = () => {
             </Head>
             <div className='relative max-w-3xl mx-auto pt-14 mb-10'>
                 <DepartmentStatus />
+                <MapView />
             </div>
             <Footer />
         </>
