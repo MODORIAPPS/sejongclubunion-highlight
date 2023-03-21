@@ -139,7 +139,7 @@ export const DepartmentStatus = () => {
         href={'clubs/religion'} />
       <DepartmentArrow
         iconUrl={"/toss-emojis/4x/u1F4AA.png"}
-        title={'체육분과 (14개)'}
+        title={'체육분과 (11개)'}
         description={'다양한 운동 활동, 스포츠 대회 참여 등을 하는 동아리입니다.'}
         href={'clubs/physical'} />
       <DepartmentArrow
