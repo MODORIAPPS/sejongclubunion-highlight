@@ -22,30 +22,17 @@
 
 ## 서비스 사진
 
-<div style="display: flex;">
-  <div style="flex: 50%;">
-    <img src="github-images/index_0.PNG" alt="이미지1">
-  </div>
-  <div style="flex: 50%;">
-    <img src="github-images/index_1.PNG" alt="이미지2">
-  </div>
-</div>
-<div style="display: flex;">
-  <div style="flex: 50%;">
-    <img src="github-images/index_2.PNG" alt="이미지3">
-  </div>
-  <div style="flex: 50%;">
-    <img src="github-images/index_3.PNG" alt="이미지4">
-  </div>
-</div>
-<div style="display: flex;">
-  <div style="flex: 50%;">
-    <img src="github-images/culture.PNG" alt="이미지5">
-  </div>
-  <div style="flex: 50%;">
-    <img src="" alt="이미지6">
-  </div>
-</div>
+메인 화면 (공식 홍보 동영상 재생)             |  동아리 배치도 표시
+:-------------------------:|:-------------------------:
+![](github-images/index_0.PNG)  |  ![](github-images/index_1.PNG)
+
+분과별 동아리 현황             |  동아리실 배치도 표시
+:-------------------------:|:-------------------------:
+![](github-images/index_2.PNG)  |  ![](github-images/index_3.PNG)
+
+문화 분과 상세 페이지 (예시)             |  SNS공유 화면
+:-------------------------:|:-------------------------:
+![](github-images/culture.PNG)  |  ![](github-images/share.png)
 
 ## License
 
