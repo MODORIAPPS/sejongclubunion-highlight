@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Noto Sans KR", "sans-serif";
+}
+
+.notion-page-icon {
+  font-family: "Noto Sans KR", "sans-serif";
+}
+
+:root {
+  --color-primary: #f1cb23;
+  --rsbs-backdrop-bg: rgba(0, 0, 0, 0);
+  --rsbs-bg: red;
+  --rsbs-handle-bg: white;
+}
+
+#__next {
+  height: 100%;
+}
+
+dialog::backdrop {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.2),
+    rgba(255, 0, 0, 0.2) 1px,
+    rgba(255, 0, 0, 0.3) 1px,
+    rgba(255, 0, 0, 0.3) 20px
+  );
+}
