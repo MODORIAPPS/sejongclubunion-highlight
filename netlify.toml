@@ -1,2 +1,0 @@
-[build]
-  command = "NEXT_PUBLIC_LAST_BUILDTIME=$(date +%s) yarn build"
