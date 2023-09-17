@@ -85,11 +85,8 @@ const Clubs: React.FC = () => {
                                     </h2>
                                 </div>
                                 <div className='mb-8 px-5'>
-                                    <Link href={"/clubs"} className='text-sm bg-blue-100 hover:bg-blue-200 text-blue-500 px-2 py-1 rounded-lg cursor-pointer transition-all font-bold'>
+                                    <Link href={"/clubs"} className='text bg-blue-100 hover:bg-blue-200 text-blue-500 px-2 py-1 rounded-lg cursor-pointer transition-all font-bold'>
                                         중앙동아리 분과별로 보기
-                                        <span className="material-symbols-outlined ml-1 w-3 h-3 text-base">
-                                            north_east
-                                        </span>
                                     </Link>
                                 </div>
                                 {
