@@ -8,8 +8,8 @@ const Clubs: React.FC = () => {
     return (
         <>
             <Head>
-                <title>총동아리연합회 - 중앙동아리</title>
-                <meta name="description" content="세종대학교 중앙동아리 소개" />
+                <title>중앙동아리 분과별로 보기</title>
+                <meta name="description" content="세종대학교 중앙동아리 분과별로 보기" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

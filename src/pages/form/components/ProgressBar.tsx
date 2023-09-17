@@ -23,7 +23,6 @@ const ProgressBar: React.FC<ProgressBarProps> = (
 
         const myObserver = new ResizeObserver(() => {
             setWidth(progressBg.clientWidth);
-            console.log(progressBg.clientWidth);
         });
         myObserver.observe(progressBg);
 

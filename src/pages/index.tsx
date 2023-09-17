@@ -109,10 +109,20 @@ const MapAndTimeTable = () => {
 export const DepartmentStatus = () => {
   return (
     <div>
-      <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
-        <img className='w-8 h-8 inline-block' src={"/toss-emojis/2x/u1F4DA.png"} /> <br />
-        분과별 동아리 현황
-      </h2>
+      <div className='flex flex-row items-end justify-between'>
+        <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
+          <img className='w-8 h-8 inline-block' src={"/toss-emojis/2x/u1F4DA.png"} /> <br />
+          분과별 중앙동아리 현황
+        </h2>
+      </div>
+      <div className='my-2 px-5'>
+        <Link href={"/clubs-all"} className='text-sm bg-blue-100 hover:bg-blue-200 text-blue-500 px-2 py-1 rounded-lg cursor-pointer transition-all font-bold'>
+          모든 중앙동아리 한번에 보기
+          <span className="material-symbols-outlined ml-1 w-3 h-3 text-base">
+            north_east
+          </span>
+        </Link>
+      </div>
       <p className="text-gray-500 my-4 px-5">
         세종대학교 중앙동아리는 총 6개의 분과로 나뉘어요.<br />
         (공연, 문화, 봉사, 종교, 체육, 학술)
