@@ -85,7 +85,7 @@ const TicketBottom: React.FC<ControllerProps> = ({ goNext }) => {
                     <p className="text-sm font-bold">A{seatNumber}</p>
                 </div>
             </div>
-            <p onClick={goNext} className="absolute bottom-4 shadow-xl p-3 left-[50%] translate-x-[-50%] min-w-[200px] mx-auto text-center text-white font-bold rounded-2xl bg-[#F1CB23] hover:bg-[#b99c1a] cursor-pointer">
+            <p onClick={goNext} className="absolute bottom-4 shadow-xl p-3 left-[50%] translate-x-[-50%] min-w-[200px] mx-auto text-center text-white font-bold rounded-2xl bg-primary-400 hover:bg-primary-300 cursor-pointer">
                 내게 맞는 동아리 찾아보기
             </p>
         </div>

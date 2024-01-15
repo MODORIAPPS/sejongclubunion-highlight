@@ -16,7 +16,7 @@ const MapView: React.FC = () => {
 
   const Button: React.FC<{ map: MapType }> = ({ map }) => {
     return (
-      <div style={{ background: location === map ? "#F1CB23" : "#E1E1E1" }} onClick={() => setLocation(map)} className='ml-3 py-[2px] px-2 rounded'>
+      <div style={{ background: location === map ? "#ff8694" : "#E1E1E1" }} onClick={() => setLocation(map)} className='ml-3 py-[2px] px-2 rounded cursor-pointer'>
         <span className='text-xs text-gray-700'>{map}</span>
       </div>
     );

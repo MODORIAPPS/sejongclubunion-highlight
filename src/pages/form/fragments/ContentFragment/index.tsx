@@ -69,7 +69,7 @@ const FormButton: React.FC<FormButtonProps> = (
     }) => {
 
     return (
-        <div onClick={() => onClick(index)} className="p-3 w-full bg-[#F1CB23] mb-2 rounded-2xl active:bg-[#d1b01d]">
+        <div onClick={() => onClick(index)} className="p-3 w-full bg-primary-400 mb-2 rounded-2xl active:bg-primary-300">
             <p className="text-center text-white">{children}</p>
         </div>
     );

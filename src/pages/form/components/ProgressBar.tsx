@@ -38,7 +38,7 @@ const ProgressBar: React.FC<ProgressBarProps> = (
             <p className="font-bold text-center text-gray-700">{title}</p>
             <div className="flex flex-row items-center w-full">
                 <div className="w-full flex-1 relative">
-                    <div style={{ width: slideWidth }} className="absolute h-[10px] bg-[#F1CB23] rounded-lg transition-all duration-500" />
+                    <div style={{ width: slideWidth }} className="absolute h-[10px] bg-primary-400 rounded-lg transition-all duration-500" />
                     <img style={{ left: slideWidth - 10 }} className="absolute w-8 h-8 bottom-[-13px] transition-all duration-500" src="/images/airplane.png" />
                     <div id="progress-bg" className="w-full h-[10px] bg-[#D9D9D9] rounded-lg" />
                 </div>
