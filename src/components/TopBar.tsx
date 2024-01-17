@@ -101,7 +101,7 @@ const TopBar: React.FC = () => {
             <div className="fixed z-20 w-full p-5 bg-white flex flex-row justify-between items-center border-b-[1px] border-bg-gray-400">
                 <Link href="/" className="flex items-center">
                     <img width={24} height={24} className="mr-2 inline-block" src={"/light_logo.png"} />
-                    <span className="text-[color:var(--color-primary)]">하이라이트</span>
+                    <span className="text-[color:var(--color-primary)]">세동제</span>
                 </Link>
                 <svg
                     onClick={toggleDialogOpen}

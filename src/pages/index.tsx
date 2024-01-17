@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Head>
-        <title>하이라이트 - 가두모집</title>
+        <title>총동아리연합회 - 세동제</title>
         <meta name="description" content="세종대학교 총동아리연합회 가두모집" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
