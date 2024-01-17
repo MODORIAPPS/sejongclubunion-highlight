@@ -23,7 +23,7 @@ export default function Document() {
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffccd1" />
 
-        <meta property="og:image" content="https://find.sejongclubunion.com/images/head_og.png" />
+        <meta property="og:image" content="https://find.sejongclubunion.com/images/og_image.jpg" />
         <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js" integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossOrigin="anonymous"></script>
         <Script strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
