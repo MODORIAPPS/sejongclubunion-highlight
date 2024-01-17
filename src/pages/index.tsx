@@ -10,7 +10,7 @@ const Home: React.FC = () => {
     <>
       <Head>
         <title>총동아리연합회 - 세동제</title>
-        <meta name="description" content="세종대학교 총동아리연합회 가두모집" />
+        <meta name="description" content="세종대학교 총동아리연합회 세동제" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -28,12 +28,11 @@ const Home: React.FC = () => {
 const Video: React.FC = () => {
   return (
     <div className="relative h-screen">
-      <video
-        poster="/images/intro-thumbnail.jpeg"
+      <img
         style={{ objectFit: "cover" }}
         className='absolute w-screen h-screen'
-        src="/intro.mp4"
-        loop autoPlay muted controls={false} playsInline />
+        src="/images/bg_image.jpg"
+      />
       <div className="absolute z-4 w-full h-screen bg-gradient-to-t from-black to-[#ffffff00] opacity-90" />
       <div className="absolute z-10 bottom-20 w-full">
         <div>
@@ -87,10 +86,10 @@ const MapAndTimeTable = () => {
     <div>
       <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
         <img className='w-8 h-8 inline-block' src={"/toss-emojis/4x/u1F9ED.png"} /> <br />
-        가두모집 동아리 배치도
+        세동제 동아리 배치도
       </h2>
-      <p className="text-gray-500 my-4 px-5">
-        동아리 신입부원 모집제는 <b>2023년 3월 6일(월)~7일(화) 10:00 ~ 17:00</b> 에 하고,<br />
+      <p className="text-gray-600 my-4 px-5">
+        동아리 신입부원 모집제는 <b>2024년 3월 6일(월)~7일(화) 10:00 ~ 17:00</b> 에 하고,<br />
         장소는 <b>대양홀 앞</b>, <b>학생회관 잔디밭</b>에서 해요.
       </p>
       <TimeTableBanner />
