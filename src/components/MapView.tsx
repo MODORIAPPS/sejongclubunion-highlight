@@ -29,15 +29,18 @@ const MapView: React.FC = () => {
         동아리실 배치도
       </h2>
       <p className="text-gray-500 my-4">
-        중앙동아리는 모두 학생회관에 있어요
+        중앙동아리는 모두 학생회관에 있어요.
       </p>
       <img
         className='w-full h-[150px]'
         src={getImage()} />
-      <div className='mt-4 flex flex-row-reverse '>
-        <Button map={"6층"} />
-        <Button map={"5층"} />
-        <Button map={"지하 2층"} />
+      <div className="flex flex-row items-center justify-between mt-4">
+        <p className="text-sm text-gray-400">2023년 9월 11일 업데이트</p>
+        <div className='flex flex-row-reverse '>
+          <Button map={"6층"} />
+          <Button map={"5층"} />
+          <Button map={"지하 2층"} />
+        </div>
       </div>
     </div>
   );
