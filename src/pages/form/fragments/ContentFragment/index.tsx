@@ -1,8 +1,8 @@
 import { useFormContentContext } from "@/context/FormContentContext";
 import React, { useEffect } from "react";
 import { ControllerProps } from "../..";
-import ProgressBar from "../../components/ProgressBar";
-import formData from "../../data/data.json";
+import ProgressBar from "@/assets/form/components/ProgressBar";
+import formData from "@/assets/form/data/data.json";
 
 const ContentFragment: React.FC<ControllerProps> = ({ goNext }) => {
 

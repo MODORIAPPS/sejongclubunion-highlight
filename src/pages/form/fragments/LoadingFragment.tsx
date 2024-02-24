@@ -1,5 +1,5 @@
 import { SubjectCount, useFormContentContext } from "@/context/FormContentContext";
-import FragmentQuestion, { SubjectType } from "@/pages/form/data/fragment";
+import FragmentQuestion, { SubjectType } from "@/assets/form/data/fragment";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
@@ -35,13 +35,6 @@ const LoadingFragment: React.FC = () => {
             router.push("/result/" + highestCountObjectName)
             return;
         }
-
-        // TODO: ex) /result/academic:active
-
-        // setTimeout(() => {
-        //     // router.push("/form/result/" + findHighestCountObjectName(result));
-        //     router.push("/clubs/" + findHighestCountObjectName(result) + "?form=scu");
-        // }, 3000);
     }, []);
 
     return (
@@ -59,7 +52,7 @@ const LoadingFragment: React.FC = () => {
             <div className="absolute bottom-4 px-4 w-full">
                 <div>
                     {
-                        questionList.map((option) =>
+                        questionList?.map((option) =>
                             <div key={option.key} onClick={() => handleClickAnswer(option.key)} className="p-3 w-full bg-primary-400 mb-2 rounded-2xl active:bg-primary-300 cursor-pointer">
                                 <p className="text-center text-white">{option.answer}</p>
                             </div>
