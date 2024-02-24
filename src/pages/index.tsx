@@ -17,7 +17,7 @@ const Home: React.FC = () => {
       <div className='relative max-w-3xl mx-auto'>
         <Video />
         <MapAndTimeTable />
-        <DepartmentStatus />
+        {/* <DepartmentStatus /> */}
         <MapView />
         <Footer />
       </div>
@@ -86,13 +86,13 @@ const MapAndTimeTable = () => {
     <div>
       <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
         <img className='w-8 h-8 inline-block' src={"/toss-emojis/4x/u1F9ED.png"} /> <br />
-        세동제 동아리 배치도
+        세동제
       </h2>
       <p className="text-gray-600 my-4 px-5">
-        동아리 신입부원 모집제는 <b>2024년 3월 6일(월)~7일(화) 10:00 ~ 17:00</b> 에 하고,<br />
+        세동제(동아리 신입부원 모집제)는 <b>2024년 3월 6일(월)~7일(화) 10:00 ~ 17:00</b> 에 하고,<br />
         장소는 <b>대양홀 앞</b>, <b>학생회관 잔디밭</b>에서 해요.
       </p>
-      <TimeTableBanner />
+      {/* <TimeTableBanner />
 
       <Image
         className='mx-auto'
@@ -100,7 +100,7 @@ const MapAndTimeTable = () => {
         height={300}
         alt="club-map"
         src="/images/map.png"
-      />
+      /> */}
     </div>
   );
 };
@@ -111,7 +111,7 @@ export const DepartmentStatus = () => {
       <div className='flex flex-row items-end justify-between'>
         <h2 className="text-gray-700 font-bold text-3xl px-5 mt-14">
           <img className='w-8 h-8 inline-block' src={"/toss-emojis/2x/u1F4DA.png"} /> <br />
-          분과별 중앙동아리 현황
+          중앙동아리 현황
         </h2>
       </div>
       <div className='my-2 px-5'>

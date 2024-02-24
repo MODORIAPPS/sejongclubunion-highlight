@@ -1,19 +1,21 @@
 import Footer from "@/components/Footer";
-import useGetClubList from "@/hooks/useGetClubList";
-import Head from "next/head";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import ClubItem, { ClubItemProps } from "../clubs/components/ClubItem";
-import { SubjectType } from "@/models/subject.type";
 import MapView from "@/components/MapView";
-import { useMemo } from "react";
+import useGetClubList from "@/hooks/useGetClubList";
+import { SubjectType } from "@/models/subject.type";
+import ClubItem, { ClubItemProps } from "@/pages/clubs/components/ClubItem";
+import { GetServerSideProps } from "next";
+import Head from "next/head";
 import Link from "next/link";
+import React, { useMemo } from "react";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
-/**
- * 모든 동아리 목록을 한 번에 보여주는 페이지
- */
-const Clubs: React.FC = () => {
+interface ResultProps {
+    subject_key: string;
+}
 
-    const { data: clubList, loading } = useGetClubList({ subject_key: "" });
+const Clubs: React.FC<ResultProps> = ({ subject_key }) => {
+
+    const { data: clubList, loading } = useGetClubList({ subject_key });
 
     const filteredClubList: ClubItemProps[] = useMemo(() => {
         if (!clubList) return [];
@@ -63,12 +65,17 @@ const Clubs: React.FC = () => {
     return (
         <>
             <Head>
-                <title>총동아리연합회 - 중앙동아리 한번에 보기</title>
-                <meta name="description" content="세종대학교 중앙동아리 한번에 보기" />
+                <title>내게 맞는 동아리</title>
+                <meta name="description" content="내게 맞는 동아리를 찾았어요" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className='relative max-w-3xl mx-auto pt-14 mb-10'>
+            <div id="screen-capture-area" className='relative max-w-3xl mx-auto pt-24 mb-12'>
+                <div className="flex flex-col px-4 relative">
+                    <img src="/images/hwayangi.svg" alt="화양이" className="w-36" />
+                    <img src="/images/donebaki.svg" alt="화양이" className=" absolute bottom-[-30px] self-end w-24 h-24" />
+                </div>
+
                 <div className="my-8">
                     {
                         loading ?
@@ -81,14 +88,11 @@ const Clubs: React.FC = () => {
                             <>
                                 <div className="mx-4 mt-12 mb-3">
                                     <h2 className="text-2xl font-bold text-gray-700 mb-3">
-                                        세종대학교에는 총 <span className="text-primary-400">{filteredClubList.length}개</span>의 중앙동아리가 있어요.
+                                        <span className="text-primary-400">
+                                            {filteredClubList.length}개
+                                        </span>의 어울리는 동아리를 찾았어요!
                                     </h2>
                                 </div>
-                                {/* <div className='mb-8 px-5'>
-                                    <Link href={"/clubs"} className='text bg-blue-100 hover:bg-blue-200 text-blue-500 px-2 py-1 rounded-lg cursor-pointer transition-all font-bold'>
-                                        중앙동아리 분과별로 보기
-                                    </Link>
-                                </div> */}
                                 {
                                     filteredClubList.map(club => {
                                         const { logo, title, shortDesc, subject: department } = club;
@@ -106,11 +110,45 @@ const Clubs: React.FC = () => {
                             </>
                     }
                 </div>
+                <div className="w-full h-1 bg-slate-100" />
+                <div className='my-8 flex flex-row justify-center'>
+                    <Link href={"/clubs-all"} className='text-xl inline-block mx-auto bg-primary-400 text-white px-6 py-3 rounded-2xl cursor-pointer transition-all font-medium'>
+                        세종대학교의 모든 동아리 보기
+                    </Link>
+                </div>
                 <MapView />
             </div>
             <Footer />
         </>
     );
 };
+
+export const getServerSideProps: GetServerSideProps<ResultProps> = async ({ params, req, res }) => {
+
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=10, stale-while-revalidate=59'
+    );
+
+    console.log("params", params)
+
+    const subject_key = params?.subject_key;
+
+    // data 없을 땐 리턴값을 달리함
+    if (!subject_key || typeof subject_key !== "string") {
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+            },
+        }
+    }
+
+    const _props: ResultProps = {
+        subject_key
+    }
+
+    return { props: _props };
+}
 
 export default Clubs;

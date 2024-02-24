@@ -1,4 +1,3 @@
-import useWindowDimensions from "@/hooks/useWindowDimensions";
 import React, { useEffect, useMemo, useState } from "react";
 
 interface ProgressBarProps {

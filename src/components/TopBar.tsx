@@ -1,3 +1,5 @@
+"use client";
+import shareImageAsset from "@/utils/share-image-asset";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Modal from 'react-modal';
@@ -83,7 +85,7 @@ const TopBar: React.FC = () => {
     }, []);
 
     const handleClickCopy = () => {
-        window.navigator.clipboard.writeText("https://find.sejongclubunion.com");
+        window.navigator.clipboard.writeText(window.location.href);
         alert("복사되었습니다!")
     };
 
@@ -92,7 +94,8 @@ const TopBar: React.FC = () => {
     };
 
     const handleClickInstagram = async () => {
-        window.open("https://www.instagram.com/create/story");
+        shareImageAsset();
+        // window.open("https://www.instagram.com/create/story");
     };
 
     return (

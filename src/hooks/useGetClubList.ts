@@ -1,10 +1,12 @@
 import { PageObjectResponse, QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { SubjectType } from "../models/subject.type";
 
+interface FetchParams {
+    subject_key?: string; // ex) academic:active
+}
 
-const useGetClubList = (department?: SubjectType) => {
+const useGetClubList = ({ subject_key }: FetchParams) => {
     const [clubList, setClubList] = useState<Array<PageObjectResponse>>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string>();
@@ -12,7 +14,7 @@ const useGetClubList = (department?: SubjectType) => {
     const fetchClubList = async () => {
         try {
             setLoading(true);
-            const url = `${process.env.NEXT_PUBLIC_MAIN_WEBSITE}/api/clubs?department=${department ?? ""}`;
+            const url = `${process.env.NEXT_PUBLIC_MAIN_WEBSITE}/api/clubs?subject_key=${subject_key ?? ""}`;
             const { data } = await axios.get<QueryDatabaseResponse>(url);
             const clubList = data?.results as Array<PageObjectResponse>;
 

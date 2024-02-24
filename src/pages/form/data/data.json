@@ -1,28 +1,28 @@
 {
     "questions": [
         {
-            "question": "문제에 직면했을 때 주로 어떻게 해결하려고 하시나요?",
+            "question": "문제가 생겼을 때 당신은 어떻게 대처하나요?",
             "options": [
                 {
-                    "answer": "제 직관을 믿는 편이에요.",
+                    "answer": "직감을 따라 결정해요!",
                     "weight": {
                         "culture": 1
                     }
                 },
                 {
-                    "answer": "결정을 내리기전에 상황을 주의깊게 분석하는 편이에요.",
+                    "answer": "천천히 상황을 분석한 후 결정해요.",
                     "weight": {
                         "academic": 1
                     }
                 },
                 {
-                    "answer": "과거 경험에 기반해 해결하려고 해요.",
+                    "answer": "과거의 경험에서 배운 것을 적용해요.",
                     "weight": {
                         "volunteer": 1
                     }
                 },
                 {
-                    "answer": "다른 사람에게 도움을 요청해요.",
+                    "answer": "친구나 가족에게 조언을 구해요.",
                     "weight": {
                         "religion": 1
                     }
@@ -30,28 +30,28 @@
             ]
         },
         {
-            "question": "자유 시간에 주로 무엇을 하시나요?",
+            "question": "자유 시간에 보통 무엇을 하나요?",
             "options": [
                 {
-                    "answer": "공연이나 콘서트에 가요.",
+                    "answer": "공연이나 콘서트를 즐겨 찾아요.",
                     "weight": {
                         "show": 1
                     }
                 },
                 {
-                    "answer": "그림을 그리거나 글을 쓰는 것과 같은 창의적인 취미를 해요.",
+                    "answer": "그림 그리기나 글쓰기처럼 창의적인 활동을 해요.",
                     "weight": {
                         "culture": 1
                     }
                 },
                 {
-                    "answer": "봉사활동 또는 지역사회 봉사활동에 참여해요.",
+                    "answer": "지역 사회 봉사활동에 참여해요.",
                     "weight": {
                         "volunteer": 1
                     }
                 },
                 {
-                    "answer": "스포츠 또는 야외 활동에 참여해요.",
+                    "answer": "스포츠나 야외 활동을 즐겨 해요.",
                     "weight": {
                         "physical": 1
                     }
@@ -59,29 +59,29 @@
             ]
         },
         {
-            "question": "새로운 상황이나 경험에 어떻게 접근하시나요?",
+            "question": "새로운 상황이나 경험을 어떻게 받아들이시나요?",
             "options": [
                 {
-                    "answer": "새로운 것을 시도하고 위험을 감수하는 것이 좋아요",
+                    "answer": "새로운 것에 도전하는 걸 좋아해요!",
                     "weight": {
                         "culture": 1,
                         "show": 1
                     }
                 },
                 {
-                    "answer": "행동을 취하기 전에 계획과 구조를 갖는 것을 선호해요.",
+                    "answer": "계획을 세우고 조심스럽게 접근해요.",
                     "weight": {
                         "academic": 1
                     }
                 },
                 {
-                    "answer": "열린 마음으로 새로운 경험을 통해 배울 의향이 있어요.",
+                    "answer": "열린 마음으로 새로운 것을 배우려 해요.",
                     "weight": {
                         "volunteer": 1
                     }
                 },
                 {
-                    "answer": "제가 알고 있는 것과 편안한 것을 좋아해요.",
+                    "answer": "익숙한 것과 안전한 것을 선호해요.",
                     "weight": {
                         "religion": 1
                     }
@@ -89,29 +89,29 @@
             ]
         },
         {
-            "question": "스트레스, 또는 어려운 상황에 어떻게 대응하시나요?",
+            "question": "스트레스나 어려움을 어떻게 극복하나요?",
             "options": [
                 {
-                    "answer": "저는 저만의 취미 생활로 대응해요.",
+                    "answer": "취미 생활로 스트레스를 해소해요.",
                     "weight": {
                         "culture": 1,
                         "show": 1
                     }
                 },
                 {
-                    "answer": "논리적이고 체계적으로 문제를 해결하려고 노력해요.",
+                    "answer": "논리적으로 문제를 해결하려고 해요.",
                     "weight": {
                         "academic": 1
                     }
                 },
                 {
-                    "answer": "다른 사람들의 도움을 구해요",
+                    "answer": "주변 사람들의 조언을 구해요.",
                     "weight": {
                         "volunteer": 1
                     }
                 },
                 {
-                    "answer": "저의 믿음이나 영적인 실천에 의지해요.",
+                    "answer": "믿음이나 영적인 힘을 빌려요.",
                     "weight": {
                         "religion": 1
                     }
@@ -119,28 +119,28 @@
             ]
         },
         {
-            "question": "다음 중 당신을 가장 잘 표현하는 단어는 무엇인가요?",
+            "question": "당신을 가장 잘 나타내는 단어는 무엇인가요?",
             "options": [
                 {
-                    "answer": "창의력",
+                    "answer": "창의성",
                     "weight": {
                         "culture": 2
                     }
                 },
                 {
-                    "answer": "지성",
+                    "answer": "지적 호기심",
                     "weight": {
                         "academic": 2
                     }
                 },
                 {
-                    "answer": "공감",
+                    "answer": "공감 능력",
                     "weight": {
                         "volunteer": 2
                     }
                 },
                 {
-                    "answer": "믿음/신뢰",
+                    "answer": "믿음",
                     "weight": {
                         "religion": 2
                     }
@@ -148,28 +148,28 @@
             ]
         },
         {
-            "question": "어떤 종류의 영화나 TV쇼를 가장 즐겨 보나요?",
+            "question": "가장 좋아하는 영화나 TV 프로그램 유형은 무엇인가요?",
             "options": [
                 {
-                    "answer": "드마라 또는 다큐멘터리",
+                    "answer": "드라마나 다큐멘터리",
                     "weight": {
                         "academic": 1
                     }
                 },
                 {
-                    "answer": "코미디 또는 풍자물",
+                    "answer": "코미디나 풍자",
                     "weight": {
                         "culture": 1
                     }
                 },
                 {
-                    "answer": "영감을 주거나 동기부여",
+                    "answer": "영감을 주는 프로그램",
                     "weight": {
                         "academic": 1
                     }
                 },
                 {
-                    "answer": "사극 또는 종교",
+                    "answer": "역사물이나 종교 관련 프로그램",
                     "weight": {
                         "religion": 1
                     }
@@ -177,29 +177,29 @@
             ]
         },
         {
-            "question": "의사 결정에 어떻게 접근하시나요?",
+            "question": "어떻게 의사결정을 하시나요?",
             "options": [
                 {
-                    "answer": "제 본능과 감정을 따라요",
+                    "answer": "감정을 따라 결정해요.",
                     "weight": {
                         "culture": 1,
                         "show": 1
                     }
                 },
                 {
-                    "answer": "모든 정보를 수집하고 모든 옵션을 고려한 후 결정해요",
+                    "answer": "정보를 모으고 신중하게 생각한 후에 결정해요.",
                     "weight": {
                         "academic": 1
                     }
                 },
                 {
-                    "answer": "제 결정이 어떤 영향을 미칠지 생각해요.",
+                    "answer": "내 결정이 어떤 영향을 미칠지 고려해요.",
                     "weight": {
                         "volunteer": 1
                     }
                 },
                 {
-                    "answer": "제 믿음이나 영적 믿음으로 판단해요.",
+                    "answer": "믿음에 따라 결정해요.",
                     "weight": {
                         "religion": 1
                     }
@@ -207,29 +207,29 @@
             ]
         },
         {
-            "question": "당신에게 어느 것이 가장 큰 동기인가요?",
+            "question": "당신에게 가장 큰 동기 부여는 무엇인가요?",
             "options": [
                 {
-                    "answer": "스스로 표현하는 것 ",
+                    "answer": "자기 표현",
                     "weight": {
                         "show": 1,
                         "culture": 1
                     }
                 },
                 {
-                    "answer": "지식을 습득하는 것",
+                    "answer": "새로운 지식 습득",
                     "weight": {
                         "academic": 1
                     }
                 },
                 {
-                    "answer": "다른 사람에게 긍정적인 영향을 주는 것",
+                    "answer": "다른 사람에게 긍정적인 영향을 미치는 것",
                     "weight": {
                         "academic": 1
                     }
                 },
                 {
-                    "answer": "큰 힘과 목적성으로 연결",
+                    "answer": "종교적인 힘과 연결됨",
                     "weight": {
                         "religion": 1
                     }

@@ -3,6 +3,8 @@ import { useState } from "react";
 type MapType = "지하 2층" | "5층" | "6층"
 const MapView: React.FC = () => {
 
+  return (<></>);
+
   const [location, setLocation] = useState<MapType>("지하 2층");
 
   const getImage = (): string => {

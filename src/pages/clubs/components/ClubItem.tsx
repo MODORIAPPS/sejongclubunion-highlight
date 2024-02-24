@@ -21,12 +21,12 @@ const ClubItem: React.FC<ClubItemProps> = ({ logo, title, shortDesc, subject }) 
             <div className="flex flex-col flex-1">
                 <div className="flex flex-row items-center justify-between mb-1">
                     <p className="font-bold text-xl mb-1 text-gray-700">{title}</p>
-                    <DepartmentBadge department={subject} />
+                    {/* <DepartmentBadge department={subject} /> */}
                 </div>
                 <p className="text-gray-500 mb-2">{shortDesc}</p>
-                <div className="flex">
+                {/* <div className="flex">
                     <p className="p-2 text-xs font-bold text-blue-800 bg-blue-100 rounded-lg">지원하기</p>
-                </div>
+                </div> */}
             </div>
         </div>
     );
