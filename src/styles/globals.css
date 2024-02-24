@@ -30,3 +30,29 @@ dialog::backdrop {
     rgba(255, 0, 0, 0.3) 20px
   );
 }
+
+
+#gradient-effect-text {
+  background: linear-gradient(
+      to right,
+      #E0115F 20%,
+      #FFBF00 30%,
+      #F33A6A 70%,
+      #E49B0F 80%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 500% auto;
+  animation: textShine 3s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}

@@ -25,10 +25,6 @@ const shareImageAsset = async (): Promise<boolean> => {
         url: document.location.href,
     };
 
-    // 공유 가능한지 확인 후 공유 실행
-    console.log(navigator);
-    console.log(typeof navigator.share === 'undefined');
-    console.log(window.navigator.canShare);
     if (navigator.canShare && navigator.canShare(shareData)) {
         try {
             await navigator.share(shareData);

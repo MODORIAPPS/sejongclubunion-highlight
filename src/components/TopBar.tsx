@@ -1,5 +1,6 @@
 "use client";
 import shareImageAsset from "@/utils/share-image-asset";
+import shareUrl from "@/utils/share-url";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Modal from 'react-modal';
@@ -94,6 +95,10 @@ const TopBar: React.FC = () => {
     };
 
     const handleClickInstagram = async () => {
+        if(document.getElementById("screen-capture-area") === null) {
+            shareUrl();
+            return;
+        }
         shareImageAsset();
         // window.open("https://www.instagram.com/create/story");
     };

@@ -2,7 +2,6 @@ import DepartmentArrow from '@/components/DepartmentArrow';
 import Footer from '@/components/Footer';
 import MapView from '@/components/MapView';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const Home: React.FC = () => {
@@ -16,7 +15,7 @@ const Home: React.FC = () => {
       </Head>
       <div className='relative max-w-3xl mx-auto'>
         <Video />
-        <MapAndTimeTable />
+        {/* <MapAndTimeTable /> */}
         {/* <DepartmentStatus /> */}
         <MapView />
         <Footer />
@@ -38,10 +37,10 @@ const Video: React.FC = () => {
         <div>
           <p className='text-center mb-2 text-white font-bold text-4xl leading-normal'>
             내게 맞는<br />
-            <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FBAB7E] to-[#F7CE68]'>동아리</span> 찾아보기
+            <span id='gradient-effect-text' className='font-extrabold'>동아리</span> 찾아보기
           </p>
           <p className="text-lg text-center text-white mb-5">
-            40개가 넘는 중앙동아리가 <br />
+            40개가 넘는 동아리가 <br />
             여러분을 기다리고 있어요!
           </p>
           <div className='flex flex-row justify-center'>
