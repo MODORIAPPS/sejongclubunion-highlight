@@ -24,19 +24,23 @@ export default function Document() {
         <meta name="theme-color" content="#ffccd1" />
 
         {/* Open Graph */}
-        <meta name="og:url" content="https://find.sejongclubunion.com" />
-        <meta name="og:type" content="website" />
-        <meta name="og:title" content="총동아리연합회 - 세동제" />
-        <meta name="og:description" content="세종대학교 동아리 신입부원 모집제" />
+        <meta property="og:url" content="https://find.sejongclubunion.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="총동아리연합회 - 세동제" />
+        <meta property="og:description" content="세종대학교 동아리 신입부원 모집제" />
         <meta property="og:image" content="https://find.sejongclubunion.com/images/og_image.jpg" />
-       
+
         <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js" integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossOrigin="anonymous"></script>
         <Script strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-5CD82MB');`}}></Script>
+        })(window,document,'script','dataLayer','GTM-5CD82MB');`}} />
+        <Script
+          strategy="beforeInteractive"
+          src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NCP_CLIENT_ID}`}
+        />
       </Head>
       <body className='h-full'>
         <Main />
