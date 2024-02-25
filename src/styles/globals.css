@@ -56,3 +56,13 @@ dialog::backdrop {
       background-position: 100% 50%;
   }
 }
+
+#club-detail-bottom-sheet {
+  --rsbs-backdrop-bg: var(--rsbs-backdrop-bg);
+  --rsbs-bg: var(--rsbs-bg);
+  --rsbs-handle-bg: white;
+  --rsbs-max-w: var(--rsbs-max-w);
+  --rsbs-ml: var(--rsbs-ml);
+  --rsbs-mr: var(--rsbs-mr);
+  --rsbs-overlay-rounded: var(--rsbs-overlay-rounded);
+}

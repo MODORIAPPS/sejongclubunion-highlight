@@ -50,11 +50,17 @@ const Clubs: React.FC = () => {
                     department = club.properties.department.multi_select[0].name as SubjectType;
                 }
 
+                let is_temp: boolean = false;
+                if (club?.properties?.is_temp?.type === "checkbox") {
+                    is_temp = club.properties.is_temp.checkbox;
+                }
+
                 return ({
                     logo,
                     title,
                     shortDesc,
-                    subject: department
+                    subject: department,
+                    is_temp
                 });
             }
             );
@@ -90,7 +96,9 @@ const Clubs: React.FC = () => {
                                     </Link>
                                 </div> */}
                                 {
-                                    filteredClubList.map(club => {
+                                    filteredClubList
+                                    .filter(club => !club.is_temp)
+                                    .map(club => {
                                         const { logo, title, shortDesc, subject: department } = club;
                                         return (
                                             <ClubItem
