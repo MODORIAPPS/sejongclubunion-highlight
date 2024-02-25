@@ -1,9 +1,11 @@
 import FormContentContextProvider from "@/context/FormContentContext";
 import Head from "next/head";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ContentFragment from "./fragments/ContentFragment";
 import LoadingFragment from "./fragments/LoadingFragment";
 import StartFragment from "./fragments/StartFragment";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 
 export interface ControllerProps {
     goNext: () => void;
@@ -11,6 +13,7 @@ export interface ControllerProps {
 
 const Form: React.FC = () => {
 
+    const router = useRouter();
     const [page, setPage] = useState<"intro" | "content" | "loading">("intro");
 
     const renderFragments = () => {
@@ -21,6 +24,11 @@ const Form: React.FC = () => {
             default: return <ContentFragment goNext={() => setPage("loading")} />;
         }
     };
+
+    useEffect(() => {
+        router.push('/');
+        toast.info('준비중입니다. 개발자가 열심히 준비중이에요!');
+    }, []);
 
     return (
         <>

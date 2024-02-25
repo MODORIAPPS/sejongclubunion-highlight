@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import MapView from '@/components/MapView';
 import Head from 'next/head';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 const Home: React.FC = () => {
   return (
@@ -25,6 +26,12 @@ const Home: React.FC = () => {
 };
 
 const Video: React.FC = () => {
+
+
+  const handleClickFindClub = () => {
+    toast.info('준비중입니다. 개발자가 열심히 준비중이에요!');
+  };
+
   return (
     <div className="relative h-screen">
       <img
@@ -44,12 +51,19 @@ const Video: React.FC = () => {
             여러분을 기다리고 있어요!
           </p>
           <div className='flex flex-row justify-center'>
-            <Link href="/form" className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
+            {/* // TODO: 준비중... 개발되면 사용 가능함. */}
+            {/* <Link href="/form" className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
               <span className='font-bold text-lg text-white flex items-center'>
                 <img className='w-6 h-6 mr-2 inline-block' src="/toss-emojis/4x/u1F50D.png" />
                 지금 찾아보기
               </span>
-            </Link>
+            </Link> */}
+            <div onClick={handleClickFindClub} className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
+              <span className='font-bold text-lg text-white flex items-center'>
+                <img className='w-6 h-6 mr-2 inline-block' src="/toss-emojis/4x/u1F50D.png" />
+                지금 찾아보기
+              </span>
+            </div>
           </div>
         </div>
       </div>
