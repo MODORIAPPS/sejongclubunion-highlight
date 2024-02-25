@@ -23,7 +23,6 @@ const ClubItem: React.FC<ClubItemProps> = ({ logo, title, shortDesc, subject }) 
 
         const img = clubs[index].logo_img;
         const text = img.split("/")[1];
-        console.log(text);
         switch (text) {
             case "first-ri":
                 return 1;
@@ -82,9 +81,11 @@ const AreaBadge: React.FC<{ area: number; }> = ({ area }) => {
             color = '#AD6DA0';
             break;
         default:
-            color = '#EEA5A1';
+            color = '#000000';
             break;
     }
+
+    if (color === '#000000') return <></>;
 
     return (
         <p

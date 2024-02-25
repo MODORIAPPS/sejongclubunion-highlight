@@ -258,7 +258,7 @@ const clubs = [
     },
     {
         logo_img: "/fourth-ri/밤부_로고.png",
-        title: "밤부",
+        title: "BAMBOO",
         description: "매달 정기 출사와 1년에 2번 전시회를 개최하며 촬영 장비에 구애받지 않고 사진을 찍고자 하는 마음만 있다면 누구나 함께 할 수 있는 사진 동아리",
         recruit: "3월 4일(월) ~ 3월 7일(목)",
         activity: "카메라로 순간 포착, 학교 장소 맞추면 상품 증정, 인스타 팔로우 상품(사진엽서 혹은 스티커) 증정",
@@ -280,7 +280,7 @@ const clubs = [
     },
     {
         logo_img: "/fourth-ri/TODO_로고.png",
-        title: "TODO",
+        title: "투두 TO-DO",
         description: "청춘을 위한 버킷리스트 동아리",
         recruit: "모집기간 : 2월 28일(수) ~ 3월 7일(목)",
         activity: "빙고판의 미션들을 수행하여 원빙고를 성공하면 간식(+ 투두 떡메모지) 증정, TBTI 검사",
