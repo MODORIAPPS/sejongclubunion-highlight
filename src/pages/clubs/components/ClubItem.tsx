@@ -1,6 +1,8 @@
 import { SubjectType } from "@/models/subject.type";
 import React from "react";
 import { getSubjectObject } from "../[subject]";
+import clubs from "@/assets/clubs";
+import { darkenColor, hexToRGBA } from "@/utils/color";
 
 export interface ClubItemProps {
     logo: string;
@@ -12,7 +14,31 @@ export interface ClubItemProps {
 const ClubItem: React.FC<ClubItemProps> = ({ logo, title, shortDesc, subject }) => {
 
     const handleClickItem = () => {
-        window.open(`https://www.instagram.com/p/${getSubjectObject(subject, title).pageId}`);
+        // window.open(`https://www.instagram.com/p/${getSubjectObject(subject, title).pageId}`);
+    };
+
+    const getArea = () => {
+        const index = clubs.findIndex((c) => c.title === title);
+        if (index === -1) return;
+
+        const img = clubs[index].logo_img;
+        const text = img.split("/")[1];
+        switch (text) {
+            case "first-li":
+                return 1;
+            case "second-li":
+                return 2;
+            case "third-li":
+                return 3;
+            case "fourth-li":
+                return 4;
+            case "fifth-li":
+                return 5;
+            case "sixth-li":
+                return 6;
+            default:
+                return 1;
+        }
     };
 
     return (
@@ -21,60 +47,49 @@ const ClubItem: React.FC<ClubItemProps> = ({ logo, title, shortDesc, subject }) 
             <div className="flex flex-col flex-1">
                 <div className="flex flex-row items-center justify-between mb-1">
                     <p className="font-bold text-xl mb-1 text-gray-700">{title}</p>
-                    {/* <DepartmentBadge department={subject} /> */}
+                    <AreaBadge area={getArea()} />
                 </div>
                 <p className="text-gray-500 mb-2">{shortDesc}</p>
-                {/* <div className="flex">
+                <div className="flex">
                     <p className="p-2 text-xs font-bold text-blue-800 bg-blue-100 rounded-lg">지원하기</p>
-                </div> */}
+                </div>
             </div>
         </div>
     );
 };
 
-const DepartmentBadge: React.FC<{ department: SubjectType; }> = ({ department }) => {
-    let bgColor = '';
-    let textColor = '';
-    let text = '';
+const AreaBadge: React.FC<{ area: number; }> = ({ area }) => {
+    let color = '';
 
-    switch (department) {
-        case 'show':
-            bgColor = 'bg-orange-100';
-            textColor = 'text-orange-800';
-            text = '공연분과'
+    switch (area) {
+        case 1:
+            color = '#EEA5A1';
             break;
-        case 'religion':
-            bgColor = 'bg-red-100';
-            textColor = 'text-red-800';
-            text = '종교분과'
+        case 2:
+            color = '#FBD952';
             break;
-        case 'culture':
-            bgColor = 'bg-blue-100';
-            textColor = 'text-blue-800';
-            text = '문화분과'
+        case 3:
+            color = '#E98240';
             break;
-        case 'academy':
-            bgColor = 'bg-purple-100';
-            textColor = 'text-purple-800';
-            text = '학술분과'
+        case 4:
+            color = '#6CC3E2';
             break;
-        case 'volunteer':
-            bgColor = 'bg-green-100';
-            textColor = 'text-green-800';
-            text = '봉사분과'
+        case 5:
+            color = '#8DC041';
             break;
-        case 'physical':
-            bgColor = 'bg-gray-100';
-            textColor = 'text-gray-800';
-            text = '체육분과'
+        case 6:
+            color = '#AD6DA0';
             break;
         default:
+            color = '#EEA5A1';
             break;
     }
 
     return (
-        <p className={`p-2 text-xs font-bold rounded-lg ${bgColor} ${textColor}`}>
-            {text}
+        <p
+            style={{ backgroundColor: hexToRGBA(color, 0.3), color: darkenColor(color, 40) }}
+            className={`px-2 py-1 text-xs font-bold rounded-lg`}>
+            동화 {area}리
         </p>
     );
 };

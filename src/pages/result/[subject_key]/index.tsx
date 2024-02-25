@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import MapView from "@/components/MapView";
+import NaverMap from "@/components/result/Map";
 import useGetClubList from "@/hooks/useGetClubList";
 import { SubjectType } from "@/models/subject.type";
 import ClubItem, { ClubItemProps } from "@/pages/clubs/components/ClubItem";
@@ -71,10 +72,12 @@ const Clubs: React.FC<ResultProps> = ({ subject_key }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div id="screen-capture-area" className='relative max-w-3xl mx-auto pt-24 mb-12'>
-                <div className="flex flex-col px-4 relative">
+                <div className="flex flex-row px-4 justify-between mb-10">
                     <img src="/images/hwayangi.svg" alt="화양이" className="w-36" />
-                    <img src="/images/donebaki.svg" alt="화양이" className=" absolute bottom-[-30px] self-end w-24 h-24" />
+                    <img src="/images/donebaki.svg" alt="화양이" className="self-end w-24 h-24" />
                 </div>
+
+                <NaverMap clubList={filteredClubList} />
 
                 <div className="my-8">
                     {
@@ -111,12 +114,18 @@ const Clubs: React.FC<ResultProps> = ({ subject_key }) => {
                     }
                 </div>
                 <div className="w-full h-1 bg-slate-100" />
-                <div className='my-8 flex flex-row justify-center'>
+                <div className="flex flex-row justify-center mt-8">
+                    <Link href={"https://festival.sejongclubunion.com/"} className={`mx-auto px-3 py-1 text-lg font-bold rounded-lg bg-primary-100 text-primary-950 flex flex-row gap-2 items-center`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" /></svg>
+                        세동제 웹사이트로 돌아가기
+                    </Link>
+                </div>
+                <div className='mt-6 flex flex-row justify-center'>
                     <Link href={"/clubs-all"} className='text-xl inline-block mx-auto bg-primary-400 text-white px-6 py-3 rounded-2xl cursor-pointer transition-all font-medium'>
                         세종대학교의 모든 동아리 보기
                     </Link>
                 </div>
-                <MapView />
+                {/* <MapView /> */}
             </div>
             <Footer />
         </>
