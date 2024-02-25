@@ -27,7 +27,7 @@ export default function ClubDetailBottomSheet(
             }
         >
             <div>
-                <img className="w-full" src={`/clubs-detail/${selectedClubTitle}.png`} />
+                <img className="w-full" src={`/clubs-detail/${selectedClubTitle?.replace('#', '')}.png`} />
             </div>
         </BottomSheet>
     );

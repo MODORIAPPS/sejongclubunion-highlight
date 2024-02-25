@@ -1,10 +1,19 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { DepartmentStatus } from "..";
 import Head from "next/head";
 import Footer from "@/components/Footer";
 import MapView from "@/components/MapView";
+import { useRouter } from "next/router";
 
 const Clubs: React.FC = () => {
+
+    const router = useRouter();
+
+    useEffect(() => {
+        router.replace("/clubs-all");
+    }, []);
+
     return (
         <>
             <Head>
