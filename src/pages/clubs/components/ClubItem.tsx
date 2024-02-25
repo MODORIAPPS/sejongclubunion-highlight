@@ -23,18 +23,19 @@ const ClubItem: React.FC<ClubItemProps> = ({ logo, title, shortDesc, subject }) 
 
         const img = clubs[index].logo_img;
         const text = img.split("/")[1];
+        console.log(text);
         switch (text) {
-            case "first-li":
+            case "first-ri":
                 return 1;
-            case "second-li":
+            case "second-ri":
                 return 2;
-            case "third-li":
+            case "third-ri":
                 return 3;
-            case "fourth-li":
+            case "fourth-ri":
                 return 4;
-            case "fifth-li":
+            case "fifth-ri":
                 return 5;
-            case "sixth-li":
+            case "sixth-ri":
                 return 6;
             default:
                 return 1;
@@ -87,7 +88,7 @@ const AreaBadge: React.FC<{ area: number; }> = ({ area }) => {
 
     return (
         <p
-            style={{ backgroundColor: hexToRGBA(color, 0.3), color: darkenColor(color, 40) }}
+            style={{ backgroundColor: hexToRGBA(color, 0.2), color: darkenColor(color, 50) }}
             className={`px-2 py-1 text-xs font-bold rounded-lg`}>
             동화 {area}리
         </p>
