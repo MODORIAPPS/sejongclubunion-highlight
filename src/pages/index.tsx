@@ -37,7 +37,7 @@ const Video: React.FC = () => {
       <img
         style={{ objectFit: "cover" }}
         className='absolute w-screen h-screen'
-        src="/images/bg_image.jpg"
+        src="/sedongje.png"
       />
       <div className="absolute z-4 w-full h-screen bg-gradient-to-t from-black to-[#ffffff00] opacity-90" />
       <div className="absolute z-10 bottom-20 w-full">
@@ -51,19 +51,12 @@ const Video: React.FC = () => {
             여러분을 기다리고 있어요!
           </p>
           <div className='flex flex-row justify-center'>
-            {/* // TODO: 준비중... 개발되면 사용 가능함. */}
-            {/* <Link href="/form" className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
+            <Link href="/form" className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
               <span className='font-bold text-lg text-white flex items-center'>
                 <img className='w-6 h-6 mr-2 inline-block' src="/toss-emojis/4x/u1F50D.png" />
                 지금 찾아보기
               </span>
-            </Link> */}
-            <div onClick={handleClickFindClub} className="bg-[color:var(--color-primary)] px-4 py-3 rounded-2xl cursor-pointer">
-              <span className='font-bold text-lg text-white flex items-center'>
-                <img className='w-6 h-6 mr-2 inline-block' src="/toss-emojis/4x/u1F50D.png" />
-                지금 찾아보기
-              </span>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

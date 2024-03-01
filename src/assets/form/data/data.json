@@ -16,9 +16,9 @@
                     }
                 },
                 {
-                    "answer": "과거의 경험에서 배운 것을 적용해요.",
+                    "answer": "빠르게 해결하려 노력해요",
                     "weight": {
-                        "volunteer": 1
+                        "physical": 1
                     }
                 },
                 {
@@ -99,9 +99,9 @@
                     }
                 },
                 {
-                    "answer": "논리적으로 문제를 해결하려고 해요.",
+                    "answer": "영화를 보거나 책을 읽어요.",
                     "weight": {
-                        "academic": 1
+                        "culture": 1
                     }
                 },
                 {
@@ -124,25 +124,25 @@
                 {
                     "answer": "창의성",
                     "weight": {
-                        "culture": 2
+                        "culture": 1
                     }
                 },
                 {
                     "answer": "지적 호기심",
                     "weight": {
-                        "academic": 2
+                        "academic": 1
                     }
                 },
                 {
-                    "answer": "공감 능력",
+                    "answer": "강인함",
                     "weight": {
-                        "volunteer": 2
+                        "physical": 1
                     }
                 },
                 {
-                    "answer": "믿음",
+                    "answer": "활발함",
                     "weight": {
-                        "religion": 2
+                        "show": 1
                     }
                 }
             ]
@@ -151,15 +151,15 @@
             "question": "가장 좋아하는 영화나 TV 프로그램 유형은 무엇인가요?",
             "options": [
                 {
-                    "answer": "드라마나 다큐멘터리",
+                    "answer": "감동",
                     "weight": {
-                        "academic": 1
+                        "volunteer": 1
                     }
                 },
                 {
-                    "answer": "코미디나 풍자",
+                    "answer": "액션",
                     "weight": {
-                        "culture": 1
+                        "physical": 1
                     }
                 },
                 {
@@ -180,10 +180,10 @@
             "question": "어떻게 의사결정을 하시나요?",
             "options": [
                 {
-                    "answer": "감정을 따라 결정해요.",
+                    "answer": "내 결정이 어떤 영향을 미칠지 고려해요.",
                     "weight": {
-                        "culture": 1,
-                        "show": 1
+                        "culture": 1
+            
                     }
                 },
                 {
@@ -193,15 +193,15 @@
                     }
                 },
                 {
-                    "answer": "내 결정이 어떤 영향을 미칠지 고려해요.",
+                    "answer": "감정을 따라 결정해요",
                     "weight": {
-                        "volunteer": 1
+                        "physical": 1
                     }
                 },
                 {
-                    "answer": "믿음에 따라 결정해요.",
+                    "answer": "나를 믿고 결정하는 편이에요.",
                     "weight": {
-                        "religion": 1
+                        "show": 1
                     }
                 }
             ]
@@ -212,8 +212,8 @@
                 {
                     "answer": "자기 표현",
                     "weight": {
-                        "show": 1,
-                        "culture": 1
+                        "show": 1
+                        
                     }
                 },
                 {
@@ -225,13 +225,13 @@
                 {
                     "answer": "다른 사람에게 긍정적인 영향을 미치는 것",
                     "weight": {
-                        "academic": 1
+                        "culture": 1
                     }
                 },
                 {
-                    "answer": "종교적인 힘과 연결됨",
+                    "answer": "지속가능한 발전",
                     "weight": {
-                        "religion": 1
+                        "physical": 1
                     }
                 }
             ]
