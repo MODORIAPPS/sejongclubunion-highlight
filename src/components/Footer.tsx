@@ -39,7 +39,7 @@ function formatDate(d: Date) {
     const month = months[d.getMonth()];
     const day = d.getDate();
 
-    return `${year} ${month} ${day}`;
+    return `${month} ${day}, ${year}`;
 };
 
 export default Footer;
