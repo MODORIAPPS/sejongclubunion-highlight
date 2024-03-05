@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import MapView from "@/components/MapView";
 import NaverMap from "@/components/result/Map";
 import useGetClubList from "@/hooks/useGetClubList";
 import { SubjectType } from "@/models/subject.type";
@@ -72,9 +71,13 @@ const Clubs: React.FC<ResultProps> = ({ subject_key }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div id="screen-capture-area" className='relative max-w-3xl mx-auto pt-24 mb-12'>
-                <div className="flex flex-row px-4 justify-between mb-10">
-                    <img src="/images/hwayangi.svg" alt="화양이" className="w-36" />
-                    <img src="/images/donebaki.svg" alt="화양이" className="self-end w-24 h-24" />
+
+                <div className="mx-4 mt-12 mb-3">
+                    <h2 className="text-2xl font-bold text-gray-700 mb-3">
+                        <span className="text-primary-400">
+                            {filteredClubList.length}개
+                        </span>의 어울리는 동아리를 찾았어요!
+                    </h2>
                 </div>
 
                 <NaverMap clubList={filteredClubList} />
@@ -89,13 +92,7 @@ const Clubs: React.FC<ResultProps> = ({ subject_key }) => {
                             </SkeletonTheme>
                             :
                             <>
-                                <div className="mx-4 mt-12 mb-3">
-                                    <h2 className="text-2xl font-bold text-gray-700 mb-3">
-                                        <span className="text-primary-400">
-                                            {filteredClubList.length}개
-                                        </span>의 어울리는 동아리를 찾았어요!
-                                    </h2>
-                                </div>
+
                                 {
                                     filteredClubList.map(club => {
                                         const { logo, title, shortDesc, subject: department } = club;
@@ -113,7 +110,14 @@ const Clubs: React.FC<ResultProps> = ({ subject_key }) => {
                             </>
                     }
                 </div>
+                
+                <div className="flex flex-row px-4 justify-between mb-10">
+                    <img src="/images/hwayangi.svg" alt="화양이" className="w-36" />
+                    <img src="/images/donebaki.svg" alt="화양이" className="self-end w-24 h-24" />
+                </div>
+
                 <div className="w-full h-1 bg-slate-100" />
+
                 <div className="flex flex-row justify-center mt-8">
                     <Link href={"https://festival.sejongclubunion.com/"} className={`mx-auto px-3 py-1 text-lg font-bold rounded-lg bg-primary-100 text-primary-950 flex flex-row gap-2 items-center`}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path fill="currentColor" d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z" /></svg>
