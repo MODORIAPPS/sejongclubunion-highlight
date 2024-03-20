@@ -52,7 +52,7 @@ const ClubItem: React.FC<ClubItemProps> = ({ logo, title, shortDesc, subject }) 
                 <div className="flex flex-col flex-1">
                     <div className="flex flex-row items-center justify-between mb-1">
                         <p className="font-bold text-xl mb-1 text-gray-700">{title}</p>
-                        <AreaBadge area={getArea()} />
+                        {/* <AreaBadge area={getArea()} /> */}
                     </div>
                     <p className="text-gray-500 mb-2">{shortDesc}</p>
                     <div className="flex justify-end">
